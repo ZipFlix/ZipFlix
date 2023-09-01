@@ -12,12 +12,12 @@ export const Home = () => {
 
   return (
     <Row>
-      <Col md="3" className="pad">
-        <span className="hipster rounded" />
-      </Col>
+      {/*<Col md="3" className="pad">*/}
+      {/*  <span className="hipster rounded" />*/}
+      {/*</Col>*/}
       <Col md="9">
-        <h2>Welcome, Java Hipster!</h2>
-        <p className="lead">This is your homepage</p>
+        <h2>Welcome to ZipFlix!</h2>
+        <p className="lead">This is the paragraph tag</p>
         {account?.login ? (
           <div>
             <Alert color="success">You are logged in as user &quot;{account.login}&quot;.</Alert>

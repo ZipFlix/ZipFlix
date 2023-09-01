@@ -1,0 +1,25 @@
+entity Videos
+{
+title String
+description String
+releaseDate String
+movieArtURL String
+videoURL String
+genre String
+}
+entity Reviews
+{
+message String
+}
+relationship ManyToOne
+{
+Videos{createdBy(login)} to User
+}
+relationship OneToMany
+{
+Videos to Reviews{videoName(title)}
+}
+relationship ManyToOne
+{
+Reviews{createdBy(login)} to User
+}

@@ -48,6 +48,10 @@ public class CacheConfiguration {
             createCache(cm, dev.zipcode.zipflix.domain.User.class.getName());
             createCache(cm, dev.zipcode.zipflix.domain.Authority.class.getName());
             createCache(cm, dev.zipcode.zipflix.domain.User.class.getName() + ".authorities");
+            createCache(cm, dev.zipcode.zipflix.domain.Videos.class.getName());
+            createCache(cm, dev.zipcode.zipflix.domain.Videos.class.getName() + ".reviews");
+            createCache(cm, dev.zipcode.zipflix.domain.Reviews.class.getName());
+            createCache(cm, dev.zipcode.zipflix.domain.Videos.class.getName() + ".videoNames");
             // jhipster-needle-ehcache-add-entry
         };
     }

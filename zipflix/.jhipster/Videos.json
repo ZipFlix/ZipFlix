@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20230830214834",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "videos",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "releaseDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "movieArtURL",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "videoURL",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "genre",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Videos",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "reviews",
+      "otherEntityRelationshipName": "videoName",
+      "relationshipName": "reviews",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "createdBy",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

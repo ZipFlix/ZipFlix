@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "changelogDate": "20230830214835",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "reviews",
+  "fields": [
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Reviews",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "createdBy",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "title",
+      "otherEntityName": "videos",
+      "otherEntityRelationshipName": "reviews",
+      "relationshipName": "videoName",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
