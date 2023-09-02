@@ -87,7 +87,6 @@ nav ul li a:hover {
     color: #fff; 
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 #search-form button:hover {
@@ -129,4 +128,50 @@ nav ul li a:hover {
     max-height: auto; 
 }
 
+#form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+#add-video-form {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px; 
+}
+
+#add-video-form input {
+    padding: 7px;
+    margin: 5px 15px 15px 15px;
+    display: inline-block;
+    width: 180px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #730808;
+    color: #ffffff;
+}
+
+#add-video-form label {
+    margin-right: 10px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: left;
+    width: 150px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+#add-video-form button {
+    margin: 20px;
+    padding: 12px 20px;
+    background-color: #010101; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+}
+
+#add-video-form button:hover {
+    background-color: #c13939; 
+}
