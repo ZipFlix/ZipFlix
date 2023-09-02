@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZipFlix</title>
+  <link rel="stylesheet" href="./koley.css?v=1" />
+  <script src="./app.js" async defer></script>
+</head>
+
+<body>
+<h1>Movie Detail</h1>
+<section id="section">
+  <div id="post"></div>
+  <button id="gotorev">See Reviews</button>
+</section>
+
+<script>
+  // Get the button element by its id
+  var goToRevButton = document.getElementById("gotorev");
+
+  // Add a click event listener to the button
+  goToRevButton.addEventListener("click", function() {
+    // Get the current URL
+    var currentURL = window.location.href;
+
+    // Extract the videoid parameter value from the current URL
+    var videoid = getParameterByName("videoid", currentURL);
+
+    // Build the new URL with the videoid parameter
+    var newURL = "movierevs.html?reviewid=" + videoid;
+
+    // Change the page location to the new URL
+    window.location.href = newURL;
+  });
+
+  // Function to extract a parameter value from a URL
+  function getParameterByName(name, url) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+</script>
+
+
+
+</body>
+</html>
