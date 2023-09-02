@@ -46,60 +46,78 @@ function showVideoList(data) {
 }
 
 function showVideoDetail(post) {
+  const element = document.getElementById('post');
+  element.innerHTML = ''; // Clear any existing content
 
-    const element = document.getElementById('post');
-    element.innerHTML = ''; // Clear any existing content
+  // Create a container for the video details
+  const container = document.createElement('div');
+  container.classList.add('video-details-container');
 
-    // Create a container for the video details
-    const container = document.createElement('div');
-    container.classList.add('video-details-container');
+  // Create the left side container
+  const leftContainer = document.createElement('div');
+  leftContainer.classList.add('text-container');
 
-    // Create the left side container
-    const leftContainer = document.createElement('div');
-    leftContainer.classList.add('text-container');
+  // Create and populate elements for the left side
+  const title = document.createElement('h1');
+  title.innerHTML = post.title;
 
-    // Create and populate elements for the left side
-    const title = document.createElement('h1');
-    title.innerHTML = post.title;
+  const internaldetail = document.createElement('div');
+  internaldetail.classList.add('genre-release-container');
 
-    const internaldetail = document.createElement('div'); 
-    internaldetail.classList.add('genre-release-container');
+  const genre = document.createElement('h4');
+  genre.innerHTML = `<strong>Genre:</strong> ${post.genre}`;
+  const releaseDate = document.createElement('h4');
+  releaseDate.innerHTML = `<strong>Release Date:</strong> ${post.releaseDate}`;
 
-    const genre = document.createElement('h4');
-    genre.innerHTML = `<strong>Genre:</strong> ${post.genre}`;
-    const releaseDate = document.createElement('h4');
-    releaseDate.innerHTML = `<strong>Release Date:</strong> ${post.releaseDate}`;
+  internaldetail.appendChild(genre);
+  internaldetail.appendChild(releaseDate);
 
-    internaldetail.appendChild(genre);
-    internaldetail.appendChild(releaseDate);
+  const description = document.createElement('p');
+  description.innerHTML = post.description;
 
-    const description = document.createElement('p');
-    description.innerHTML = post.description;
+  // Append the title, internaldetail, and description to the leftContainer
+  leftContainer.appendChild(title);
+  leftContainer.appendChild(internaldetail);
+  leftContainer.appendChild(description);
 
-    leftContainer.appendChild(title);
-    leftContainer.appendChild(internaldetail);
-    leftContainer.appendChild(description);
+  // Create an element for displaying reviews
+  const reviewsContainer = document.createElement('div');
+  reviewsContainer.classList.add('reviews-container');
 
-    // Create the right side container
-    const rightContainer = document.createElement('div');
-    rightContainer.classList.add('image-container');
+  // Loop through the reviews and create elements for each one
+  post.reviews.forEach((review) => {
+    const reviewElement = document.createElement('div');
+    reviewElement.classList.add('review');
 
-    const image = document.createElement('img');
-    image.classList.add('resized-image');
-    image.src = post.movieArtURL;
-    image.alt = `${post.title} Image`;
-    rightContainer.appendChild(image);
-    
-    const imageLink = document.createElement('a');
-    imageLink.href = post.videoURL;
-    imageLink.appendChild(image);
+    const reviewMessage = document.createElement('p');
+    reviewMessage.innerHTML = review.message;
 
-    rightContainer.appendChild(imageLink);
+    reviewElement.appendChild(reviewMessage);
+    reviewsContainer.appendChild(reviewElement);
+  });
 
-    container.appendChild(leftContainer);
-    container.appendChild(rightContainer);
-    element.appendChild(container);
-    
+  // Append the reviewsContainer to the leftContainer
+  leftContainer.appendChild(reviewsContainer);
+
+  // Create the right side container
+  const rightContainer = document.createElement('div');
+  rightContainer.classList.add('image-container');
+
+  const image = document.createElement('img');
+  image.classList.add('resized-image');
+  image.src = post.movieArtURL;
+  image.alt = `${post.title} Image`;
+  rightContainer.appendChild(image);
+
+  const imageLink = document.createElement('a');
+  imageLink.href = post.videoURL;
+  imageLink.appendChild(image);
+
+  rightContainer.appendChild(imageLink);
+
+  container.appendChild(leftContainer);
+  container.appendChild(rightContainer);
+  element.appendChild(container);
 }
 
 function parseVideoId() {

@@ -17,14 +17,14 @@ h1 {
 }
 
 header {
-    background-color: #030303; 
-    color: #fff; 
+    background-color: #030303;
+    color: #fff;
     padding: 0px 10px 0px 10px;
 }
 
 nav {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center; /* Vertically align content */
 }
 
@@ -42,23 +42,23 @@ nav {
 .left-links ul li,
 .right-links ul li {
     display: inline;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .left-links a,
 .right-links a {
     text-decoration: none;
-    color: #fff; 
+    color: #fff;
 }
 
 .left-links a:hover,
 .right-links a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 
 #logo {
-    font-size: 32px; 
+    font-size: 32px;
     font-weight: bolder;
     font-style: italic;
 }
@@ -66,13 +66,13 @@ nav {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff; 
+    color: #fff;
 
 }
 
 nav ul li a:hover {
-    text-decoration: underline; 
-} 
+    text-decoration: underline;
+}
 
 #search-input {
     padding: 10px;
@@ -83,15 +83,15 @@ nav ul li a:hover {
 
 #search-form button {
     padding: 10px 20px;
-    background-color: #730808; 
-    color: #fff; 
+    background-color: #730808;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #search-form button:hover {
-    background-color: #c13939; 
+    background-color: #c13939;
 }
 
 
@@ -99,7 +99,7 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: center; 
+    justify-content: center;
     margin-top: 60px;
     margin-left: 30px;
     padding: 30px 0px 30px 60px;
@@ -108,25 +108,49 @@ nav ul li a:hover {
 .text-container {
     flex: 1;
     margin-right: 20px;
-    color: #fff; 
+    color: #fff;
 }
 
 .genre-release-container {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .image-container {
     flex: 1;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 .resized-image {
     max-width: 350px;
-    max-height: auto; 
+    max-height: auto;
+}
+.resized-image {
+  max-width: 350px;
+  max-height: auto;
+}
+.reviews-container {
+  background-color: #940e0e;
+
+  padding: 10px;
+  margin-top: 50px;
+
 }
 
+/* Style individual review elements */
+.review {
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  padding: 10px;
+  background-color: #210101;
+  color: #fff;
+}
+
+/* Add spacing between review messages */
+.review p {
+  margin: 0;
+}
 
