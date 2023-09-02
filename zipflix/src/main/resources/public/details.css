@@ -1,0 +1,132 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: auto;
+    background: #730808;
+}
+
+h4, a, p {
+    color: #fff;
+    margin: 15px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+}
+
+header {
+    background-color: #030303; 
+    color: #fff; 
+    padding: 0px 10px 0px 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; /* Vertically align content */
+}
+
+.right-links {
+    padding-top: 20px;
+}
+
+.left-links ul,
+.right-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-links ul li,
+.right-links ul li {
+    display: inline;
+    margin-right: 20px; 
+}
+
+.left-links a,
+.right-links a {
+    text-decoration: none;
+    color: #fff; 
+}
+
+.left-links a:hover,
+.right-links a:hover {
+    text-decoration: underline; 
+}
+
+
+#logo {
+    font-size: 32px; 
+    font-weight: bolder;
+    font-style: italic;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff; 
+
+}
+
+nav ul li a:hover {
+    text-decoration: underline; 
+} 
+
+#search-input {
+    padding: 10px;
+    width: 150px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+#search-form button {
+    padding: 10px 20px;
+    background-color: #730808; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-form button:hover {
+    background-color: #c13939; 
+}
+
+
+.video-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center; 
+    margin-top: 60px;
+    margin-left: 30px;
+    padding: 30px 0px 30px 60px;
+}
+
+.text-container {
+    flex: 1;
+    margin-right: 20px;
+    color: #fff; 
+}
+
+.genre-release-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.resized-image {
+    max-width: 350px;
+    max-height: auto; 
+}
+
+
