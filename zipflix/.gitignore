@@ -157,3 +157,9 @@ Desktop.ini
 ######################
 /coverage/
 /.nyc_output/
+
+ZipFlix/zipflix/src/main/resources/public/app.js
+ZipFlix/zipflix/src/main/resources/public/movierevs.html
+ZipFlix/zipflix/src/main/resources/public/movies.html
+ZipFlix/zipflix/src/main/resources/public/reviews.html
+ZipFlix/zipflix/src/main/resources/public/zf.html
