@@ -136,6 +136,7 @@ Desktop.ini
 *.*~
 *~
 .merge_file*
+zipflix/src/main/resources/public/listdetail.html
 
 ######################
 # Gradle Wrapper
