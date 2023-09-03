@@ -1,7 +1,8 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   margin: auto;
-  background: #730808;
+ // background: #730808;
+
 }
 
 h4, a, p {
@@ -9,6 +10,13 @@ h4, a, p {
   margin: 15px;
   font-weight: lighter;
   text-align: center;
+}
+.text-container
+{
+  flex: 1;
+  margin-right: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the last value (alpha) to control transparency */
+  color: #fff;
 }
 
 h1 {
@@ -126,9 +134,12 @@ nav ul li a:hover {
 }
 
 .reviews-container {
-  background-color: #940e0e;
+  background-color: #000000;
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 10px;
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the last value (alpha) to control transparency */
+  color: #fff;
 }
 
 /* Style individual review elements */
@@ -202,5 +213,16 @@ nav ul li a:hover {
   text-decoration: none;
   font-weight: bold;/* Remove underlines */
   font-size: 16px;
-
+}
+.center-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 25px;
 }
