@@ -128,6 +128,11 @@ nav ul li a:hover {
     max-height: auto; 
 }
 
+.image-thumbnail {
+    max-width: 200px;
+    max-height: auto;
+}
+
 #form-container {
     display: flex;
     flex-direction: column;
@@ -174,4 +179,19 @@ nav ul li a:hover {
 
 #add-video-form button:hover {
     background-color: #c13939; 
+}
+
+/* Style for the container that wraps the video images */
+.video-container {
+    display: inline-block;
+    width: 20%; /* each container takes up 20% of the parent's width */
+    box-sizing: border-box;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+
+/* Style for the row that contains video containers */
+.video-row {
+    clear: both; /* Clear the float property to start a new row */
 }

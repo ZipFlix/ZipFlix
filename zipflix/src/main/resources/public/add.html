@@ -8,6 +8,37 @@
     <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
     <script src="./add.js" async defer></script>
+
+    <style>
+        /* dropdown menu */
+        .genre-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .genre-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .genre-dropdown:hover .genre-dropdown-content {
+            display: block;
+        }
+
+        .genre-dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .genre-dropdown-content a:hover {
+            background-color: #000000;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +48,17 @@
                 <ul>
                     <li id="logo">ZipFlix</li>
                     <li><a href="./zf.html">Home</a></li>
-                    <li><a href="#">Genre</a></li>
+                    <li class="genre-dropdown">
+                        <a href="#" id="genre-dropdown-trigger">Genre</a>
+                        <div class="genre-dropdown-content" id="genreDropdown">
+                            <a href="./genre.html?genre=Action">Action</a>
+                            <a href="./genre.html?genre=Animation">Animation</a>
+                            <a href="./genre.html?genre=Comedy">Comedy</a>
+                            <a href="./genre.html?genre=Drama">Drama</a>
+                            <a href="./genre.html?genre=Fantasy">Fantasy</a>
+                            <a href="./genre.html?genre=Horror">Horror</a>
+                        </div>
+                    </li>   
                     <li><a href="./listdetail.html">My List</a></li>
                     <li><a href="./add.html">Add Video</a></li>
                 </ul>
@@ -54,5 +95,30 @@
             <button type="submit" onclick="doPostOfForm()">Add Video</button>
         </form>
     </section>
+
+    <script>
+        // JavaScript to handle the dropdown menu
+        const genreDropdownTrigger = document.getElementById("genre-dropdown-trigger");
+        const genreDropdown = document.getElementById("genreDropdown");
+
+        let isDropdownHovered = false;
+
+        genreDropdownTrigger.addEventListener("mouseenter", function () {
+            isDropdownHovered = true;
+            genreDropdown.style.display = "block";
+        });
+
+        genreDropdown.addEventListener("mouseleave", function () {
+            isDropdownHovered = false;
+            genreDropdown.style.display = "none";
+        });
+
+        document.addEventListener("click", function () {
+            if (!isDropdownHovered) {
+                genreDropdown.style.display = "none";
+            }
+        });
+    </script>
+
 </body>
 </html>
