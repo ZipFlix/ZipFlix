@@ -32,7 +32,7 @@ function showVideoList(data) {
     const ul = document.getElementById('posts');
     const list = document.createDocumentFragment();
 
-    data.map(function(post) {
+  data.map(function(post) {
         console.log("Video:", post);
         let li = document.createElement('li');
         let title = document.createElement('h3');
@@ -202,7 +202,22 @@ function displaySearchResults(results) {
     // Create and populate list items for the dropdown menu
     results.forEach((video) => {
       const listItem = document.createElement('li');
-      listItem.textContent = video.title;
+
+      // Create an image element and set its source
+      let image = document.createElement('img');
+      image.src = video.movieArtURL;
+      image.alt = `${video.title} Image`;
+      image.classList.add('thumbnail'); // Add a class for styling
+
+      // Create a link for the title
+      let titleLink = document.createElement('a');
+      titleLink.href = `/details.html?videoid=${video.id}`;
+      titleLink.textContent = video.title;
+
+      // Append the image and title link to the list item
+      listItem.appendChild(image);
+      listItem.appendChild(titleLink);
+
       listItem.dataset.videoId = video.id;
 
       listItem.addEventListener('click', () => {

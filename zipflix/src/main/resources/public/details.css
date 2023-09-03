@@ -148,13 +148,14 @@ nav ul li a:hover {
 /* Dropdown menu styles */
 /* Dropdown menu styles */
 .search-results-dropdown {
-  display: none;
+  display: block;
   position: absolute;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #be3e3e;
+  border: 1px solid #000000;
   max-height: 150px;
   overflow-y: auto;
   z-index: 1;
+  right:0
 }
 
 #search-results-list {
@@ -169,16 +170,33 @@ nav ul li a:hover {
   border-bottom: 1px solid #ddd;
   transition: background-color 0.2s;
   color: #000; /* Change text color to black */
-  width: 100%; /* Occupy full width */
+  width: 300px; /* Occupy full width */
   display: block; /* Make them stack vertically */
 }
 
 #search-results-list li:hover {
-  background-color: #f5f5f5;
-  color: #000; /* Change text color to black */
+  background-color: #540505;
+  color: #000000; /* Change text color to black */
 }
 
 /* Show the dropdown menu when results are available */
 #search-results-dropdown:enabled {
   display: block;
+}
+/* Add styling for the thumbnail image */
+.thumbnail {
+  max-width: 50px; /* Set the maximum width for the thumbnail */
+  margin-right: 10px; /* Add some spacing between the image and the title */
+}
+
+/* Adjust spacing between list items */
+#search-results-list li {
+  padding: 10px; /* Increase padding for better spacing */
+}
+#search-results-list li a {
+  color: #000; /* Set the text color to black */
+  text-decoration: none;
+  font-weight: bold;/* Remove underlines */
+  font-size: 16px;
+
 }
