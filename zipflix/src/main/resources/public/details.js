@@ -36,7 +36,7 @@ function showVideoList(data) {
         console.log("Video:", post);
         let li = document.createElement('li');
         let title = document.createElement('h3');
-        title.innerHTML = `<a href="/details.html?videoid=${post.id}">${post.title}</a>`;
+        title.innerHTML = `<a href="http://localhost:8080/details.html?videoid=${post.id}">${post.title}</a>`;
 
         li.appendChild(title);
         list.appendChild(li);
@@ -44,6 +44,8 @@ function showVideoList(data) {
 
     ul.appendChild(list);
 }
+
+
 
 function showVideoDetail(post) {
   const element = document.getElementById('post');
@@ -120,6 +122,7 @@ function showVideoDetail(post) {
   element.appendChild(container);
 }
 
+
 function parseVideoId() {
     try {
         var url_string = (window.location.href).toLowerCase();
@@ -131,7 +134,6 @@ function parseVideoId() {
         return "0"
       }
 }
-
 function handlePages() {
     let videoid = parseVideoId()
     console.log("videoId: ",videoid)
@@ -144,5 +146,82 @@ function handlePages() {
         fetchVideosData()
     }
 }
+handlePages();
 
-handlePages()
+
+
+
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent the form from submitting
+
+
+  const searchTerm = searchInput.value.toLowerCase();
+
+
+  if (searchTerm.trim() !== '') {
+    // Make a GET request to fetch videos based on the search term
+    fetch(`${API_URL}/api/videos`)
+      .then((res) => res.json())
+      .then((data) => {
+        // Filter the videos based on the search term
+        const filteredVideos = data.filter((video) =>
+          video.title.toLowerCase().includes(searchTerm)
+        );
+
+
+        // Display the search results in the dropdown menu
+        displaySearchResults(filteredVideos);
+      })
+      .catch((error) => {
+        console.error(`Error fetching data: ${error}`);
+        searchResults.innerHTML = 'Error loading search results';
+      });
+  }
+});
+
+
+function displaySearchResults(results) {
+  // Clear previous search results
+  searchResults.innerHTML = '';
+
+
+  if (results.length === 0) {
+    // Display a message when no results are found
+    searchResults.innerHTML = 'No results found';
+  } else {
+    // Create a list of search result links
+    const ul = document.createElement('ul');
+
+
+    results.forEach((video) => {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `/details.html?videoid=${video.id}`;
+      link.textContent = video.title;
+
+
+      li.appendChild(link);
+      ul.appendChild(li);
+    });
+
+
+    searchResults.appendChild(ul);
+  }
+
+
+  // Show the dropdown menu
+  searchResults.style.display = 'block';
+}
+
+
+// Close the dropdown menu when clicking outside of it
+document.addEventListener('click', (e) => {
+  if (!searchResults.contains(e.target)) {
+    searchResults.style.display = 'none';
+  }
+});
