@@ -153,15 +153,14 @@ handlePages();
 
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
+const searchResults = document.getElementById('search-results-dropdown');
 
 
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault(); // Prevent the form from submitting
 
-
   const searchTerm = searchInput.value.toLowerCase();
-
+  const searchResultsMenu = document.getElementById('search-results-dropdown');
 
   if (searchTerm.trim() !== '') {
     // Make a GET request to fetch videos based on the search term
@@ -173,51 +172,51 @@ searchForm.addEventListener('submit', (e) => {
           video.title.toLowerCase().includes(searchTerm)
         );
 
-
         // Display the search results in the dropdown menu
         displaySearchResults(filteredVideos);
+
+        // Show the dropdown menu
+        searchResultsMenu.style.display = 'block';
       })
       .catch((error) => {
         console.error(`Error fetching data: ${error}`);
-        searchResults.innerHTML = 'Error loading search results';
+        searchResultsMenu.innerHTML = '<li>No results found</li>';
       });
+  } else {
+    // Hide the dropdown menu when the search term is empty
+    searchResultsMenu.style.display = 'none';
   }
 });
 
 
 function displaySearchResults(results) {
-  // Clear previous search results
-  searchResults.innerHTML = '';
+  const searchResultsList = document.getElementById('search-results-list');
 
+  // Clear previous search results
+  searchResultsList.innerHTML = '';
 
   if (results.length === 0) {
     // Display a message when no results are found
-    searchResults.innerHTML = 'No results found';
+    searchResultsList.innerHTML = '<li>No results found</li>';
   } else {
-    // Create a list of search result links
-    const ul = document.createElement('ul');
-
-
+    // Create and populate list items for the dropdown menu
     results.forEach((video) => {
-      const li = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = `/details.html?videoid=${video.id}`;
-      link.textContent = video.title;
+      const listItem = document.createElement('li');
+      listItem.textContent = video.title;
+      listItem.dataset.videoId = video.id;
 
+      listItem.addEventListener('click', () => {
+        // Handle the click event when a movie is selected
+        const selectedVideoId = listItem.dataset.videoId;
+        // You can perform actions when a movie is selected here
+        // For now, let's redirect to the details page
+        window.location.href = `/details.html?videoid=${selectedVideoId}`;
+      });
 
-      li.appendChild(link);
-      ul.appendChild(li);
+      searchResultsList.appendChild(listItem);
     });
-
-
-    searchResults.appendChild(ul);
   }
-
-
-  // Show the dropdown menu
-  searchResults.style.display = 'block';
 }
-
 
 // Close the dropdown menu when clicking outside of it
 document.addEventListener('click', (e) => {
