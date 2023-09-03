@@ -150,7 +150,7 @@ nav ul li a:hover {
 .search-results-dropdown {
   display: block;
   position: absolute;
-  background-color: #be3e3e;
+  background-color: #b40b0b;
   border: 1px solid #000000;
   max-height: 150px;
   overflow-y: auto;
@@ -166,16 +166,20 @@ nav ul li a:hover {
 }
 
 #search-results-list li {
-  padding: 5px 10px;
+  padding: 10px;
   border-bottom: 1px solid #ddd;
   transition: background-color 0.2s;
   color: #000; /* Change text color to black */
   width: 300px; /* Occupy full width */
-  display: block; /* Make them stack vertically */
+  display: flex; /* Make them stack vertically */
+}
+#search-results-list li .thumbnail {
+  max-width: 50px; /* Set the maximum width for the thumbnail */
+  margin-right: 10px; /* Add some spacing between the image and the title */
 }
 
 #search-results-list li:hover {
-  background-color: #540505;
+  background-color: #e32d2d;
   color: #000000; /* Change text color to black */
 }
 
