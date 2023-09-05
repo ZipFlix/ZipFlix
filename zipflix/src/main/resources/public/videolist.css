@@ -101,9 +101,9 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: red; /* Adjust the background color and opacity as needed */
-  color: red; /* Text color for the description */
-  display: none; /* Initially hidden */
+  background-color: red;
+  color: red;
+  display: none;
   transition: opacity 0.2s ease-in-out;
 }
 
