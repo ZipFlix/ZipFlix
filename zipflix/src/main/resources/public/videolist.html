@@ -1,72 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BriefGenius</title>
-  <link rel="stylesheet" href="./videolist.css" />
-  <script src="./videolist.js" async defer></script>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>ZipFlix</title>
+  <link rel="stylesheet" type="text/css" href="videolist.css">
+  <script src="videolist.js" async defer></script>
 </head>
 <body>
 <header>
   <div class="logo">ZIPFLIX</div>
-  <ul class="tabs">
-    <li class="tab"><a href="#">Home</a></li>
-    <li class="tab"><a href="#">Genres</a></li>
-    <li class="tab"><a href="#">My List</a></li>
-  </ul>
-  <div class="search-container">
-    <input type="text" class="search-bar" placeholder="Search...">
-  </div>
+    <ul class="tabs">
+      <li class="tab"><a href="videolist.html">Home</a></li>
+      <li class="tab"><a href="#">Genres</a></li>
+      <li class="tab"><a href="#">My List</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Search...">
+    </div>
 </header>
 <h3>Recently Added</h3>
-<section id="recentlyAdded">
-  <div id="posts"></div>
-  <div class="image-list">
-    <div class="image-list-item">
-      <a href="https://www.example.com"><img src="Images/Barbie.jpeg" alt="Image 1"></a>
-    </div>
-    <div class="image-list-item">
-      <a href="https://www.example.com"><img src="Images/Oppenheimer.jpeg" alt="Image 2"></a>
-    </div>
-    <div class="image-list-item">
-      <a href="https://www.example.com"><img src="Images/MarioBros.jpeg" alt="Image 3"></a>
-    </div>
-    <div class="image-list-item">
-      <a href="https://www.example.com"><img src="Images/JohnWick.jpeg" alt="Image 4"></a>
-    </div>
-    <div class="image-list-item">
-      <a href="https://www.example.com"><img src="Images/Ironman.jpeg" alt="Image 5"></a>
-    </div>
+<section id="section">
+  <div id='image-list-container'></div>
+    <div class="image-list">
       <div class="image-list-item">
-        <a href="https://www.example.com"><img src="Images/Causeway.jpeg" alt="Image 6"></a>
       </div>
-      <div class="image-list-item">
-        <a href="https://www.example.com"><img src="Images/Wildflower.png" alt="Image 7"></a>
-      </div>
-      <div class="image-list-item">
-        <a href="https://www.example.com"><img src="Images/Flash.jpeg" alt="Image 8"></a>
-      </div>
-  </div>
-</section>
-<h3>Action</h3>
-<section id="action">
-  <div id="posts2"></div>
-  <div class="image-list">
-    <div class="image-list-item">
-      <a href="https://www.example.com"><img src="Images/Heartofstone.jpeg" alt="Image 1"></a>
     </div>
-  </div>
-</section>
-<h3>Drama</h3>
-<section id="drama">
-  <div id="posts3"></div>
-  <div class="image-list">
-    <div class="image-list-item">
-      <a href="https://www.example.com"><img src="Images/alicedarling.jpeg" alt="Image 1"></a>
+  </section>
+  <h3>Action</h3>
+  <section id="action">
+    <div id="action-movies-container"></div>
+    <div class="image-list">
+      <div class="image-list-item">
+      </div>
     </div>
-  </div>
-</section>
-</body>
-</html>
+  </section>
+  <h3>Drama</h3>
+  <section id="drama">
+    <div id="drama-movies-container"></div>
+    <div class="image-list">
+      <div class="image-list-item">
+      </div>
+    </div>
+    <h3>Comedy</h3>
+    <section id="comedy">
+      <div id="comedy-movies-container"></div>
+      <div class="image-list">
+        <div class="image-list-item">
+        </div>
+      </div>
+      <h3>Thriller</h3>
+      <section id="thriller">
+        <div id="thriller-movies-container"></div>
+        <div class="image-list">
+          <div class="image-list-item">
+          </div>
+        </div>
+  </section>
+  </body>
+  </html>
+
+
+
+
+
+
+
+
+
+  <!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8" />-->
+<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge" />-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+<!--  <title>Zipflix</title>-->
+<!--  <link rel="stylesheet" href="./videolist.css" />-->
+<!--  <script src="./videolist.js" async defer></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--  <div class="logo">ZIPFLIX</div>-->
+<!--  <ul class="tabs">-->
+<!--    <li class="tab"><a href="videolist.html">Home</a></li>-->
+<!--    <li class="tab"><a href="#">Genres</a></li>-->
+<!--    <li class="tab"><a href="#">My List</a></li>-->
+<!--  </ul>-->
+<!--  <div class="search-container">-->
+<!--    <input type="text" class="search-bar" placeholder="Search...">-->
+<!--  </div>-->
+<!--</header>-->
+<!--<h3>Recently Added</h3>-->
+<!--<section id="recentlyAdded">-->
+<!--  <div id="posts"></div>-->
+<!--  <div class="image-list">-->
+<!--    <div class="image-list-item">-->
+<!--      <a href="http://localhost:8080/details.html?videoid=1"><img src="Images/Barbie.jpeg" alt="Image 1" class="hover-image"></a>-->
+<!--    </div>-->
+<!--    <div class="image-list-item">-->
+<!--      <a href="http://localhost:8080/details.html?videoid=2"><img src="Images/Oppenheimer.jpeg" alt="Image 2" class="hover-image"></a>-->
+<!--    </div>-->
+<!--    <div class="image-list-item">-->
+<!--      <a href="http://localhost:8080/details.html?videoid=3"><img src="Images/MarioBros.jpeg" alt="Image 3" class="hover-image"></a>-->
+<!--    </div>-->
+<!--    <div class="image-list-item">-->
+<!--      <a href="http://localhost:8080/details.html?videoid=4"><img src="Images/JohnWick.jpeg" alt="Image 4" class="hover-image"></a>-->
+<!--    </div>-->
+<!--    <div class="image-list-item">-->
+<!--      <a href="http://localhost:8080/details.html?videoid=5"><img src="Images/Ironman.jpeg" alt="Image 5" class="hover-image"></a>-->
+<!--    </div>-->
+<!--      <div class="image-list-item">-->
+<!--        <a href="http://localhost:8080/details.html?videoid=6"><img src="Images/Causeway.jpeg" alt="Image 6" class="hover-image"></a>-->
+<!--      </div>-->
+<!--      <div class="image-list-item">-->
+<!--        <a href="http://localhost:8080/details.html?videoid=7"><img src="Images/Wildflower.png" alt="Image 7" class="hover-image"></a>-->
+<!--      </div>-->
+<!--      <div class="image-list-item">-->
+<!--        <a href="http://localhost:8080/details.html?videoid=8"><img src="Images/Flash.jpeg" alt="Image 8" class="hover-image"></a>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--<h3>Action</h3>-->
+<!--<section id="action">-->
+<!--  <div id="posts2"></div>-->
+<!--  <div class="image-list">-->
+<!--    <div class="image-list-item">-->
+<!--      <a href="http://localhost:8080/details.html?videoid=9"><img src="Images/Heartofstone.jpeg" alt="Image 9" class="hover-image"></a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--<h3>Drama</h3>-->
+<!--<section id="drama">-->
+<!--  <div id="posts3"></div>-->
+<!--  <div class="image-list">-->
+<!--    <div class="image-list-item">-->
+<!--      <a href="http://localhost:8080/details.html?videoid=10"><img src="Images/alicedarling.jpeg" alt="Image 10" class="hover-image"></a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--</body>-->
+<!--</html>-->

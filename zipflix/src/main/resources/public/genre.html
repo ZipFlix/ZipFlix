@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
-    <script src="./details.js" async defer></script>
+    <script src="./genre.js" async defer></script>
 
     <style>
         /* dropdown menu */
@@ -40,13 +40,14 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
             <div class="left-links">
                 <ul>
                     <li id="logo">ZipFlix</li>
-                    <li><a href="./Home.html">Home</a></li>
+                    <li><a href="./zf.html">Home</a></li>
                     <li class="genre-dropdown">
                         <a href="#" id="genre-dropdown-trigger">Genre</a>
                         <div class="genre-dropdown-content" id="genreDropdown">
@@ -57,32 +58,29 @@
                             <a href="./genre.html?genre=Fantasy">Fantasy</a>
                             <a href="./genre.html?genre=Horror">Horror</a>
                         </div>
-                    </li>
+                    </li>   
                     <li><a href="./listdetail.html">My List</a></li>
                     <li><a href="./add.html">Add Video</a></li>
                 </ul>
             </div>
-          <div class="right-links">
-            <ul>
-              <li>
-                <form id="search-form">
-                  <input type="text" id="search-input" placeholder="Search for a video">
-                  <button type="submit">Search</button>
-                </form>
-                <div class="search-results-dropdown" id="search-results-dropdown">
-                  <ul id="search-results-list"></ul>
-                </div>
-              </li>
-            </ul>
-          </div>
+            <div class="right-links">
+                <ul>
+                    <li>
+                        <form id="search-form">
+                            <input type="text" id="search-input" placeholder="Search for a video">
+                            <button type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
     <section id="section">
-        <div id='post'></div>
+        <div id='posts'></div>
     </section>
 
     <script>
-        // JavaScript to handle the dropdown menu
+        //handle the dropdown menu
         const genreDropdownTrigger = document.getElementById("genre-dropdown-trigger");
         const genreDropdown = document.getElementById("genreDropdown");
 
@@ -104,6 +102,6 @@
             }
         });
     </script>
-
+    
 </body>
 </html>

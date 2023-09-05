@@ -7,8 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
-    <script src="./details.js" async defer></script>
-
+    <script src="./add.js" async defer></script>
     <style>
         /* dropdown menu */
         .genre-dropdown {
@@ -38,15 +37,20 @@
         .genre-dropdown-content a:hover {
             background-color: #000000;
         }
+        body
+        {
+          background: #730808;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
             <div class="left-links">
                 <ul>
                     <li id="logo">ZipFlix</li>
-                    <li><a href="./Home.html">Home</a></li>
+                    <li><a href="./zf.html">Home</a></li>
                     <li class="genre-dropdown">
                         <a href="#" id="genre-dropdown-trigger">Genre</a>
                         <div class="genre-dropdown-content" id="genreDropdown">
@@ -62,23 +66,40 @@
                     <li><a href="./add.html">Add Video</a></li>
                 </ul>
             </div>
-          <div class="right-links">
-            <ul>
-              <li>
-                <form id="search-form">
-                  <input type="text" id="search-input" placeholder="Search for a video">
-                  <button type="submit">Search</button>
-                </form>
-                <div class="search-results-dropdown" id="search-results-dropdown">
-                  <ul id="search-results-list"></ul>
-                </div>
-              </li>
-            </ul>
-          </div>
+            <div class="right-links">
+                <ul>
+                    <li>
+                      <form id="search-form">
+                        <input type="text" id="search-input" placeholder="Search for a video">
+                        <button type="submit">Search</button>
+                      </form>
+                      <div class="search-results-dropdown" id="search-results-dropdown">
+                        <ul id="search-results-list"></ul>
+                      </div>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <section id="section">
+    <h1>Add a New Video</h1>
+    <section id="form-container">
         <div id='post'></div>
+        <form id="add-video-form">
+            <label for="title">Title: </label>
+            <input type="text" id="title" name="title" placeholder="Title..."><br>
+            <label for="genre">Genre: </label>
+            <input type="text" id="genre" name="genre" placeholder="Genre..."><br>
+            <label for="releaseDate">Release Date: </label>
+            <input type="text" id="releaseDate" name="releaseDate" placeholder="Release Date..."><br>
+            <label for="description">Description: </label>
+            <input type="text" id="description" name="description" placeholder="Description..."><br>
+            <label for="movieArtURL">Image (Enter URL): </label>
+            <input type="text" id="movieArtURL" name="movieArtURL" placeholder="Image URL..."><br>
+            <label for="videoURL">Video URL: </label>
+            <input type="text" id="videoURL" name="videoURL" placeholder="Video URL..."><br>
+
+            <button type="submit" onclick="doPostOfForm()">Add Video</button>
+        </form>
     </section>
 
     <script>
