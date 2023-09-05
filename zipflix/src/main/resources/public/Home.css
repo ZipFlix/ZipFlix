@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.background-image {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  z-index: -1;
+}
+
+.text {
+  /*position: relative;*/
+  z-index: 1;
+  text-align: center;
+  color: white;
+  top: 40%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.cta-button {
+  background-color: #800000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block; /* Display the button as a block element */
+  margin-top: 20px; /* Add margin to push it down a bit */
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #ff0000;
+}
+.cta-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  background-color: black;
+  padding: 30px;
+
+}
+header {
+  color: #800000;
+  /*background-color: black;*/
+
+}
+
