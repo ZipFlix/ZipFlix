@@ -8,7 +8,6 @@
     <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
     <script src="./add.js" async defer></script>
-
     <style>
         /* dropdown menu */
         .genre-dropdown {
@@ -38,6 +37,10 @@
         .genre-dropdown-content a:hover {
             background-color: #000000;
         }
+        body
+        {
+          background: #730808;
+        }
     </style>
 </head>
 
@@ -58,7 +61,7 @@
                             <a href="./genre.html?genre=Fantasy">Fantasy</a>
                             <a href="./genre.html?genre=Horror">Horror</a>
                         </div>
-                    </li>   
+                    </li>
                     <li><a href="./listdetail.html">My List</a></li>
                     <li><a href="./add.html">Add Video</a></li>
                 </ul>
@@ -66,10 +69,13 @@
             <div class="right-links">
                 <ul>
                     <li>
-                        <form id="search-form">
-                            <input type="text" id="search-input" placeholder="Search for a video">
-                            <button type="submit">Search</button>
-                        </form>
+                      <form id="search-form">
+                        <input type="text" id="search-input" placeholder="Search for a video">
+                        <button type="submit">Search</button>
+                      </form>
+                      <div class="search-results-dropdown" id="search-results-dropdown">
+                        <ul id="search-results-list"></ul>
+                      </div>
                     </li>
                 </ul>
             </div>

@@ -83,6 +83,9 @@ function showVideoDetail(post) {
   leftContainer.appendChild(description);
 
   // Create an element for displaying reviews
+  const RecentReviewHeading = document.createElement('h4');
+  RecentReviewHeading.innerHTML = 'Recent Reviews:';
+  RecentReviewHeading.classList.add('center-text');
   const reviewsContainer = document.createElement('div');
   reviewsContainer.classList.add('reviews-container');
 
@@ -99,6 +102,7 @@ function showVideoDetail(post) {
   });
 
   // Append the reviewsContainer to the leftContainer
+  leftContainer.appendChild(RecentReviewHeading);
   leftContainer.appendChild(reviewsContainer);
 
   // Create the right side container
@@ -121,8 +125,6 @@ function showVideoDetail(post) {
   container.appendChild(rightContainer);
   element.appendChild(container);
 }
-
-
 function parseVideoId() {
     try {
         var url_string = (window.location.href).toLowerCase();
@@ -147,15 +149,9 @@ function handlePages() {
     }
 }
 handlePages();
-
-
-
-
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results-dropdown');
-
-
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault(); // Prevent the form from submitting
 
@@ -239,3 +235,27 @@ document.addEventListener('click', (e) => {
     searchResults.style.display = 'none';
   }
 });
+function hasVideoIdParam() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.has('videoid');
+}
+
+// Function to set the background image or color based on the presence of videoid
+function setBodyBackground() {
+  const body = document.body;
+
+  if (hasVideoIdParam()) {
+    console.log('Setting Background Image');
+    body.style.backgroundImage = 'url("Images/desktop-wallpaper-fonds-d-ecran-avatar-2-tous-les-avatar-2-background.jpg")';
+    body.style.backgroundColor = 'transparent';
+    body.style.backgroundSize = 'cover';// Remove the background color
+  } else {
+    console.log('Setting color');
+    body.style.background = 'none';
+    body.style.backgroundColor = '#730808';
+   // Remove the background image
+  }
+}
+
+// Call the function when the page loads
+window.addEventListener('load', setBodyBackground);
