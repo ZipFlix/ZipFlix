@@ -1,133 +1,139 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    margin: auto;
-    background: #730808;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  margin: auto;
+  background: #730808;
 }
 
 h4, a, p {
-    color: #fff;
-    margin: 15px;
-    font-weight: lighter;
-    text-align: center;
+  color: #fff;
+  margin: 15px;
+  font-weight: lighter;
+  text-align: center;
 }
 
 h1 {
-    color: #fff;
-    text-align: center;
+  color: #fff;
+  text-align: center;
 }
 
 header {
-    background-color: #030303; 
-    color: #fff; 
-    padding: 0px 10px 0px 10px;
+  background-color: #030303;
+  color: #fff;
+  padding: 0px 10px 0px 10px;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; /* Vertically align content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .right-links {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .left-links ul,
 .right-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .left-links ul li,
 .right-links ul li {
-    display: inline;
-    margin-right: 20px; 
+  display: inline;
+  margin-right: 20px;
 }
 
 .left-links a,
 .right-links a {
-    text-decoration: none;
-    color: #fff; 
+  text-decoration: none;
+  color: #fff;
 }
 
 .left-links a:hover,
 .right-links a:hover {
-    text-decoration: underline; 
+  text-decoration: underline;
 }
-
 
 #logo {
-    font-size: 32px; 
-    font-weight: bolder;
-    font-style: italic;
+  font-size: 32px;
+  font-weight: bolder;
+  font-style: italic;
 }
 
-
 nav ul li a {
-    text-decoration: none;
-    color: #fff; 
-
+  text-decoration: none;
+  color: #fff;
 }
 
 nav ul li a:hover {
-    text-decoration: underline; 
-} 
+  text-decoration: underline;
+}
 
 #search-input {
-    padding: 10px;
-    width: 150px;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
 }
 
 #search-form button {
+<<<<<<< HEAD
     padding: 10px 20px;
     background-color: #730808; 
     color: #fff; 
     border: none;
     border-radius: 5px;
+=======
+  padding: 10px 20px;
+  background-color: #730808;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+>>>>>>> upstream/main
 }
 
 #search-form button:hover {
-    background-color: #c13939; 
+  background-color: #c13939;
 }
 
-
 .video-details-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center; 
-    margin-top: 60px;
-    margin-left: 30px;
-    padding: 30px 0px 30px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 60px;
+  margin-left: 30px;
+  padding: 30px 0px 30px 60px;
 }
 
 .text-container {
-    flex: 1;
-    margin-right: 20px;
-    color: #fff; 
+  flex: 1;
+  margin-right: 20px;
+  color: #fff;
 }
 
 .genre-release-container {
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .resized-image {
-    max-width: 350px;
-    max-height: auto; 
+  max-width: 350px;
+  max-height: auto;
 }
 
+<<<<<<< HEAD
 .image-thumbnail {
     max-width: 200px;
     max-height: auto;
@@ -194,4 +200,84 @@ nav ul li a:hover {
 /* Style for the row that contains video containers */
 .video-row {
     clear: both; /* Clear the float property to start a new row */
+=======
+.reviews-container {
+  background-color: #940e0e;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+/* Style individual review elements */
+.review {
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  padding: 10px;
+  background-color: #210101;
+  color: #fff;
+}
+
+/* Add spacing between review messages */
+.review p {
+  margin: 0;
+}
+
+/* Dropdown menu styles */
+/* Dropdown menu styles */
+.search-results-dropdown {
+  display: block;
+  position: absolute;
+  background-color: #b40b0b;
+  border: 1px solid #000000;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1;
+  right:0
+}
+
+#search-results-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+#search-results-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s;
+  color: #000; /* Change text color to black */
+  width: 300px; /* Occupy full width */
+  display: flex; /* Make them stack vertically */
+}
+#search-results-list li .thumbnail {
+  max-width: 50px; /* Set the maximum width for the thumbnail */
+  margin-right: 10px; /* Add some spacing between the image and the title */
+}
+
+#search-results-list li:hover {
+  background-color: #e32d2d;
+  color: #000000; /* Change text color to black */
+}
+
+/* Show the dropdown menu when results are available */
+#search-results-dropdown:enabled {
+  display: block;
+}
+/* Add styling for the thumbnail image */
+.thumbnail {
+  max-width: 50px; /* Set the maximum width for the thumbnail */
+  margin-right: 10px; /* Add some spacing between the image and the title */
+}
+
+/* Adjust spacing between list items */
+#search-results-list li {
+  padding: 10px; /* Increase padding for better spacing */
+}
+#search-results-list li a {
+  color: #000; /* Set the text color to black */
+  text-decoration: none;
+  font-weight: bold;/* Remove underlines */
+  font-size: 16px;
+
+>>>>>>> upstream/main
 }
