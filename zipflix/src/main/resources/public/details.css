@@ -79,12 +79,20 @@ nav ul li a:hover {
 }
 
 #search-form button {
+<<<<<<< HEAD
+    padding: 10px 20px;
+    background-color: #730808; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+=======
   padding: 10px 20px;
   background-color: #730808;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+>>>>>>> upstream/main
 }
 
 #search-form button:hover {
@@ -125,6 +133,74 @@ nav ul li a:hover {
   max-height: auto;
 }
 
+<<<<<<< HEAD
+.image-thumbnail {
+    max-width: 200px;
+    max-height: auto;
+}
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-video-form {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px; 
+}
+
+#add-video-form input {
+    padding: 7px;
+    margin: 5px 15px 15px 15px;
+    display: inline-block;
+    width: 180px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #730808;
+    color: #ffffff;
+}
+
+#add-video-form label {
+    margin-right: 10px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: left;
+    width: 150px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+#add-video-form button {
+    margin: 20px;
+    padding: 12px 20px;
+    background-color: #010101; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+}
+
+#add-video-form button:hover {
+    background-color: #c13939; 
+}
+
+/* Style for the container that wraps the video images */
+.video-container {
+    display: inline-block;
+    width: 20%; /* each container takes up 20% of the parent's width */
+    box-sizing: border-box;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+
+/* Style for the row that contains video containers */
+.video-row {
+    clear: both; /* Clear the float property to start a new row */
+=======
 .reviews-container {
   background-color: #940e0e;
   padding: 10px;
@@ -203,4 +279,5 @@ nav ul li a:hover {
   font-weight: bold;/* Remove underlines */
   font-size: 16px;
 
+>>>>>>> upstream/main
 }

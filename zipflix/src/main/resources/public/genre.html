@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
-    <script src="./details.js" async defer></script>
+    <script src="./genre.js" async defer></script>
 
     <style>
         /* dropdown menu */
@@ -70,20 +70,17 @@
                             <input type="text" id="search-input" placeholder="Search for a video">
                             <button type="submit">Search</button>
                         </form>
-                      <div class="search-results-dropdown" id="search-results-dropdown">
-                        <ul id="search-results-list"></ul>
-                      </div>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
     <section id="section">
-        <div id='post'></div>
+        <div id='posts'></div>
     </section>
 
     <script>
-        // JavaScript to handle the dropdown menu
+        //handle the dropdown menu
         const genreDropdownTrigger = document.getElementById("genre-dropdown-trigger");
         const genreDropdown = document.getElementById("genreDropdown");
 
