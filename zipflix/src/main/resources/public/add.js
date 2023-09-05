@@ -28,10 +28,7 @@ async function postJSON(data) {
     const result = await response.json();
     console.log("Success:", result);
 
-    // Assuming your response contains an ID or unique identifier for the added video
-    const addedVideoId = result.id; // Replace 'id' with the actual property name
-
-    // Construct the URL for the detail page
+    const addedVideoId = result.id; 
     const detailPageUrl = `/details.html?videoid=${addedVideoId}`;
 
     // Redirect to the detail page
@@ -40,11 +37,6 @@ async function postJSON(data) {
     console.error("Error:", error);
   }
 
-//     const result = await response.json();
-//     console.log("Success:", result);
-//   } catch (error) {
-//     console.error("Error:", error);
-//   }
 }
 
 const form = document.getElementById("add-video-form");
