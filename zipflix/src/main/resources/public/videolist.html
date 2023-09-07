@@ -13,12 +13,33 @@
   <div class="logo">ZIPFLIX</div>
     <ul class="tabs">
       <li class="tab"><a href="videolist.html">Home</a></li>
-      <li class="tab"><a href="#">Genres</a></li>
-      <li class="tab"><a href="#">My List</a></li>
+<!--      <li class="tab"><a href="genre.html">Genres</a></li>-->
+      <div class="dropdown">
+        <button class="dropdown">Genres</button>
+        <div class="dropdown-content">
+          <a href="genre.html?genre=Action">Action</a>
+          <a href="genre.html?genre=Animation">Animation</a>
+          <a href="genre.html?genre=Comedy">Comedy</a>
+          <a href="genre.html?genre=Drama">Drama</a>
+          <a href="genre.html?genre=Fantasy">Fantasy</a>
+          <a href="genre.html?genre=Horror">Horror</a>
+        </div>
+      </div>
+      <li class="tab"><a href="listdetail.html">My List</a></li>
+      <li class="tab"><a href="add.html">Add Video</a></li>
     </ul>
     <div class="search-container">
-      <input type="text" class="search-bar" placeholder="Search...">
+      <label>
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Search...">
+          <button type="submit">Search</button>
+        </form>
+        <div class="search-results-dropdown" id="search-results-dropdown">
+          <ul id="search-results-list"></ul>
+        </div>
+      </label>
     </div>
+
 </header>
 <h3>Recently Added</h3>
 <section id="section">
@@ -58,8 +79,8 @@
           </div>
         </div>
   </section>
-  </body>
-  </html>
+</body>
+</html>
 
 
 

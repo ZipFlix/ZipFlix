@@ -130,7 +130,7 @@ nav ul li a:hover {
 
 .resized-image {
   max-width: 350px;
-  max-height: auto;
+  max-height: 400px;
 }
 
 .reviews-container {
