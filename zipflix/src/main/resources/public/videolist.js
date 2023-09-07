@@ -38,8 +38,11 @@ function showVideoList(data) {
 
   data.sort((a, b) => b.id - a.id);
 
-  data.forEach(function (post) {
-    console.log("Video:", post);
+  // data.forEach(function (post) {
+  //   console.log("Video:", post);
+
+  for (let i = 0; i < Math.min(data.length, 8); i++) {
+    const post = data[i];
 
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('image-list-item');
@@ -53,9 +56,9 @@ function showVideoList(data) {
     image.className = 'image-item';
 
     const description = document.createElement('div');
-    description.classList.add('image-description'); // Add a class for styling
+    description.classList.add('image-description');
 
-    const descriptionText = document.createTextNode(post.description); // Use the description from your data
+    const descriptionText = document.createTextNode(post.description);
     description.appendChild(descriptionText);
 
     link.appendChild(image);
@@ -63,7 +66,7 @@ function showVideoList(data) {
     imageContainer.appendChild(description);
 
     list.appendChild(imageContainer);
-  });
+  };
 
   container.appendChild(list);
 }
@@ -380,6 +383,7 @@ document.addEventListener('click', (e) => {
     searchResults.style.display = 'none';
   }
 });
+
 
 
 
