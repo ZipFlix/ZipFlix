@@ -41,6 +41,7 @@ nav {
 }
 
 .left-links ul,
+.middle-links ul,
 .right-links ul {
   list-style: none;
   padding: 0;
@@ -48,6 +49,7 @@ nav {
 }
 
 .left-links ul li,
+.middle-links ul li,
 .right-links ul li {
   display: inline;
   margin-right: 20px;
