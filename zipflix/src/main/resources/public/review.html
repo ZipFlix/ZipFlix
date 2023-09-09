@@ -5,10 +5,7 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
-
-
-  <title>ZipFlix</title>
+    <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
     <script src="./review.js" async defer></script>
 
@@ -83,15 +80,20 @@
         </nav>
     </header>
     <h1>Add a Review</h1>
-    <section id="form-container">
+
+    <section id="review-form-container">
         <div id='post'></div>
-        <form id="add-review-form">
-            <label for="message">Review: </label><br>
-            <textarea id="message" name="message" rows="6" cols="50" placeholder="Write your review here..."></textarea><br>
-            <button type="submit">Add Review</button>
-        </form>   
-        
-        <div id="reviews-container"></div>
+        <div class="video-review-form">
+            <form id="add-review-form">
+                <label for="message">Review: </label><br>
+                <textarea id="message" name="message" rows="6" cols="50" placeholder="Write your review here..."></textarea><br>
+                <button type="submit">Add Review</button>
+            </form>   
+        </div>
+    
+        <div id="reviewlist-container">
+            <div id="existing-reviews"></div>
+        </div>
     </section>
     
 

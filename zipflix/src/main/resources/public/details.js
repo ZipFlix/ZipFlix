@@ -99,17 +99,16 @@ function showVideoDetail(post) {
     reviewsContainer.appendChild(reviewElement);
   });
 
+  const writeReviewLink = document.createElement('a');
+  writeReviewLink.href = `./review.html?videoid=${post.id}`;
+  writeReviewLink.textContent = 'Write a Review';
+  writeReviewLink.classList.add('write-review-link');
 
   // Append the reviewsContainer to the leftContainer
   leftContainer.appendChild(RecentReviewHeading);
   leftContainer.appendChild(reviewsContainer);
-
-  const writeReviewLink = document.createElement('a');
-  writeReviewLink.href = `./review.html`;
-  writeReviewLink.textContent = 'Write a Review';
-  writeReviewLink.classList.add('write-review-link');
-
   leftContainer.appendChild(writeReviewLink);
+
 
   // Create the right side container
   const rightContainer = document.createElement('div');
