@@ -12,10 +12,10 @@ function doPostOfForm(event) {
   });
   postJSON(object);
 }
-AWS.config.update({
-  accessKeyId: 'AKIA44CUR7KHWTEWZW46',
-  secretAccessKey: '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',
-  region: 'us-east-1',
+AWS.config.region = 'us-east-1';
+
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+  IdentityPoolId: 'us-east-1:aab76efd-c8c1-42fb-9e83-758d881d507e',
 });
 const S3 = new AWS.S3();
 async function uploadToS3(formData) {
