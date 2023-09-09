@@ -45,8 +45,6 @@ function showVideoList(data) {
     ul.appendChild(list);
 }
 
-
-
 function showVideoDetail(post) {
   const element = document.getElementById('post');
   element.innerHTML = ''; // Clear any existing content
@@ -125,6 +123,7 @@ function showVideoDetail(post) {
   container.appendChild(rightContainer);
   element.appendChild(container);
 }
+
 function parseVideoId() {
     try {
         var url_string = (window.location.href).toLowerCase();
@@ -136,19 +135,25 @@ function parseVideoId() {
         return "0"
       }
 }
-function handlePages() {
-    let videoid = parseVideoId()
-    console.log("videoId: ",videoid)
 
-    if (videoid != null) {
-        console.log("found a videoId")
-        fetchVideo(videoid)
-    } else {
-        console.log("load all videos")
-        fetchVideosData()
-    }
+function handlePages() {
+  let videoid = parseVideoId();
+  console.log("videoId: ", videoid);
+
+  if (videoid != null) {
+      console.log("found a videoId");
+      fetchVideo(videoid);
+
+      // Set the correct href for the "Write a Review" link
+      const writeReviewLink = document.getElementById("writeReviewLink");
+      writeReviewLink.href = `./review.html?videoid=${videoid}`;
+  } else {
+      console.log("load all videos");
+      fetchVideosData();
+  }
 }
 handlePages();
+
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results-dropdown');

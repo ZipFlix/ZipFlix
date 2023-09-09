@@ -112,6 +112,7 @@ public class Reviews implements Serializable {
         return "Reviews{" +
             "id=" + getId() +
             ", message='" + getMessage() + "'" +
+            ", video='" + getVideoName() + "'" +
             "}";
     }
 }

@@ -5,9 +5,14 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>ZipFlix</title>
+
+
+
+  <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
-    <script src="./add.js" async defer></script>
+    <script src="./review.js" async defer></script>
+
+
     <style>
         /* dropdown menu */
         .genre-dropdown {
@@ -37,19 +42,16 @@
         .genre-dropdown-content a:hover {
             background-color: #000000;
         }
-        body
-        {
-          background: #730808;
-        }
     </style>
 </head>
-
 <body>
     <header>
         <nav>
             <div class="left-links">
+                <ul><li id="logo">ZipFlix</li></ul>
+            </div>
+            <div class="middle-links">
                 <ul>
-                    <li id="logo">ZipFlix</li>
                     <li><a href="./videolist.html">Home</a></li>
                     <li class="genre-dropdown">
                         <a href="#" id="genre-dropdown-trigger">Genre</a>
@@ -65,41 +67,33 @@
                     <li><a href="./add.html">Add Video</a></li>
                 </ul>
             </div>
-            <div class="right-links">
-                <ul>
-                    <li>
-                      <form id="search-form">
-                        <input type="text" id="search-input" placeholder="Search for a video">
-                        <button type="submit">Search</button>
-                      </form>
-                      <div class="search-results-dropdown" id="search-results-dropdown">
-                        <ul id="search-results-list"></ul>
-                      </div>
-                    </li>
-                </ul>
-            </div>
+          <div class="right-links">
+            <ul>
+              <li>
+                <form id="search-form">
+                  <input type="text" id="search-input" placeholder="Search for a video">
+                  <button type="submit">Search</button>
+                </form>
+                <div class="search-results-dropdown" id="search-results-dropdown">
+                  <ul id="search-results-list"></ul>
+                </div>
+              </li>
+            </ul>
+          </div>
         </nav>
     </header>
-    <h1>Add a New Video</h1>
+    <h1>Add a Review</h1>
     <section id="form-container">
         <div id='post'></div>
-        <form id="add-video-form">
-            <label for="title">Title: </label>
-            <input type="text" id="title" name="title" placeholder="Title..."><br>
-            <label for="genre">Genre: </label>
-            <input type="text" id="genre" name="genre" placeholder="Genre..."><br>
-            <label for="releaseDate">Release Date: </label>
-            <input type="text" id="releaseDate" name="releaseDate" placeholder="Release Date..."><br>
-            <label for="description">Description: </label>
-            <input type="text" id="description" name="description" placeholder="Description..."><br>
-            <label for="movieArtURL">Image (Enter URL): </label>
-            <input type="text" id="movieArtURL" name="movieArtURL" placeholder="Image URL..."><br>
-            <label for="videoURL">Video URL: </label>
-            <input type="text" id="videoURL" name="videoURL" placeholder="Video URL..."><br>
-
-            <button type="submit" onclick="doPostOfForm()">Add Video</button>
-        </form>
+        <form id="add-review-form">
+            <label for="message">Review Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            <button type="submit">Add Review</button>
+        </form>   
+        
+        <div id="reviews-container"></div>
     </section>
+    
 
     <script>
         // JavaScript to handle the dropdown menu
