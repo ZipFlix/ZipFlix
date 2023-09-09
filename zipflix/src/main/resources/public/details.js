@@ -114,9 +114,30 @@ function showVideoDetail(post) {
   image.src = post.movieArtURL;
   image.alt = `${post.title} Image`;
   rightContainer.appendChild(image);
-
   const imageLink = document.createElement('a');
   imageLink.href = post.videoURL;
+  imageLink.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent the default link behavior
+
+    // Set the modal's display property to block
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'block';
+
+    // Optionally, you can set the video source here based on your use case
+    const videoPlayer = document.getElementById('videoPlayer');
+    const sourceElement = videoPlayer.querySelector('source');
+    sourceElement.src = post.videoURL;
+    videoPlayer.load();
+    videoPlayer.play();
+  });
+  const closeModalButton = document.getElementById('closeModal');
+  closeModalButton.addEventListener('click', function () {
+    // Set the modal's display property to none to hide it
+    const modal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.pause();
+    modal.style.display = 'none';
+  });
   imageLink.appendChild(image);
 
   rightContainer.appendChild(imageLink);
@@ -136,6 +157,7 @@ function parseVideoId() {
         return "0"
       }
 }
+
 function handlePages() {
     let videoid = parseVideoId()
     console.log("videoId: ",videoid)
@@ -228,7 +250,6 @@ function displaySearchResults(results) {
     });
   }
 }
-
 // Close the dropdown menu when clicking outside of it
 document.addEventListener('click', (e) => {
   if (!searchResults.contains(e.target)) {
@@ -239,6 +260,8 @@ function hasVideoIdParam() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.has('videoid');
 }
+
+
 
 // Function to set the background image or color based on the presence of videoid
 function setBodyBackground() {
@@ -256,6 +279,7 @@ function setBodyBackground() {
    // Remove the background image
   }
 }
+
 
 // Call the function when the page loads
 window.addEventListener('load', setBodyBackground);
