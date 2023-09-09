@@ -2,13 +2,15 @@
 <html lang='en'>
 
 <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1208.0/aws-sdk.min.js"></script>
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
     <script src="./add.js" async defer></script>
-    <style>
+
+  <style>
         /* dropdown menu */
         .genre-dropdown {
             position: relative;
@@ -93,15 +95,13 @@
             <input type="text" id="releaseDate" name="releaseDate" placeholder="Release Date..."><br>
             <label for="description">Description: </label>
             <input type="text" id="description" name="description" placeholder="Description..."><br>
-            <label for="movieArtURL">Image (Enter URL): </label>
-            <input type="text" id="movieArtURL" name="movieArtURL" placeholder="Image URL..."><br>
-            <label for="videoURL">Video URL: </label>
-            <input type="text" id="videoURL" name="videoURL" placeholder="Video URL..."><br>
-
+            <label for="movieArtFile">Upload Image:</label>
+            <input type="file" id="movieArtFile" name="movieArtFile" accept="image/*" >
+            <label for="videoFile">Upload Video:</label>
+            <input type="file" id="videoFile" name="videoFile">
             <button type="submit" onclick="doPostOfForm()">Add Video</button>
         </form>
     </section>
-
     <script>
         // JavaScript to handle the dropdown menu
         const genreDropdownTrigger = document.getElementById("genre-dropdown-trigger");
