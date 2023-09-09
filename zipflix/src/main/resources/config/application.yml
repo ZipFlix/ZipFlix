@@ -163,6 +163,7 @@ server:
 springdoc:
   show-actuator: true
 
+
 # Properties to be exposed on the /info management endpoint
 info:
   # Comma separated list of profiles that will trigger the ribbon to show
@@ -210,7 +211,8 @@ jhipster:
     allow-credentials: true
     max-age: 1800
   security:
-    content-security-policy: "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src * 'self'  data:https://s3.console.aws.amazon.com/; font-src 'self' https://fonts.gstatic.com data:"
+    content-security-policy: "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1208.0/; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src * 'self' data: https://s3.console.aws.amazon.com/ https://zipflixvideos.s3.amazonaws.com/; connect-src https://zipflixvideos.s3.amazonaws.com/ https://cognito-identity.us-east-1.amazonaws.com/  http://localhost:8080; font-src 'self' https://fonts.gstatic.com data:"
+
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class
