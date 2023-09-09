@@ -258,21 +258,6 @@ textarea {
 
 .video-row {
   clear: both;
-}
-
-#backToVideo {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  margin: 20px;
-}
-
-#backToVideo:hover {
-  text-decoration: underline;
-  color: #000000;
-}
 
 .reviews-container {
   background-color: #000000;
