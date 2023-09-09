@@ -45,8 +45,6 @@ function showVideoList(data) {
     ul.appendChild(list);
 }
 
-
-
 function showVideoDetail(post) {
   const element = document.getElementById('post');
   element.innerHTML = ''; // Clear any existing content
@@ -101,9 +99,23 @@ function showVideoDetail(post) {
     reviewsContainer.appendChild(reviewElement);
   });
 
+  const writeReviewLink = document.createElement('a');
+  writeReviewLink.href = `./review.html?videoid=${post.id}`;
+  writeReviewLink.textContent = 'Write a Review';
+  writeReviewLink.classList.add('write-review-link');
+
   // Append the reviewsContainer to the leftContainer
   leftContainer.appendChild(RecentReviewHeading);
   leftContainer.appendChild(reviewsContainer);
+  leftContainer.appendChild(writeReviewLink);
+
+
+  // const writeReviewLink = document.createElement('a');
+  // writeReviewLink.href = `./review.html`;
+  // writeReviewLink.textContent = 'Write a Review';
+  // writeReviewLink.classList.add('write-review-link');
+
+  // leftContainer.appendChild(writeReviewLink);
 
   // Create the right side container
   const rightContainer = document.createElement('div');
@@ -146,6 +158,7 @@ function showVideoDetail(post) {
   container.appendChild(rightContainer);
   element.appendChild(container);
 }
+
 function parseVideoId() {
     try {
         var url_string = (window.location.href).toLowerCase();
@@ -159,18 +172,23 @@ function parseVideoId() {
 }
 
 function handlePages() {
-    let videoid = parseVideoId()
-    console.log("videoId: ",videoid)
+  let videoid = parseVideoId();
+  console.log("videoId: ", videoid);
 
-    if (videoid != null) {
-        console.log("found a videoId")
-        fetchVideo(videoid)
-    } else {
-        console.log("load all videos")
-        fetchVideosData()
-    }
+  if (videoid != null) {
+      console.log("found a videoId");
+      fetchVideo(videoid);
+
+      // Set the correct href for the "Write a Review" link
+      const writeReviewLink = document.getElementById("writeReviewLink");
+      writeReviewLink.href = `./review.html?videoid=${videoid}`;
+  } else {
+      console.log("load all videos");
+      fetchVideosData();
+  }
 }
 handlePages();
+
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results-dropdown');

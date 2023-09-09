@@ -5,9 +5,11 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>ZipFlix</title>
+    <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
-    <script src="./details.js" async defer></script>
+    <script src="./review.js" async defer></script>
+
+
     <style>
         /* dropdown menu */
         .genre-dropdown {
@@ -77,18 +79,24 @@
           </div>
         </nav>
     </header>
-    <section id="section">
+    <h1>Add a Review</h1>
+
+    <section id="review-form-container">
         <div id='post'></div>
+        <div class="video-review-form">
+            <form id="add-review-form">
+                <label for="message">Review: </label><br>
+                <textarea id="message" name="message" rows="6" cols="50" placeholder="Write your review here..."></textarea><br>
+                <button type="submit">Add Review</button>
+            </form>   
+        </div>
+    
+        <div id="reviewlist-container">
+            <div id="existing-reviews"></div>
+        </div>
     </section>
-    <div id="videoModal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="closeModal">&times;</span>
-        <video controls muted id="videoPlayer">
-          <source src="" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
+    
+
     <script>
         // JavaScript to handle the dropdown menu
         const genreDropdownTrigger = document.getElementById("genre-dropdown-trigger");
@@ -111,9 +119,6 @@
                 genreDropdown.style.display = "none";
             }
         });
-
-        
-
     </script>
 
 </body>
