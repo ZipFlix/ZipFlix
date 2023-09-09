@@ -82,7 +82,7 @@ jhipster:
     allow-credentials: true
     max-age: 1800
   security:
-    content-security-policy: "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1208.0/; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src * 'self' data: https://s3.console.aws.amazon.com/ https://cognito-identity.us-east-1.amazonaws.com/  https://zipflixvideos.s3.amazonaws.com/; connect-src https://cognito-identity.us-east-1.amazonaws.com/ https://zipflixvideos.s3.amazonaws.com/ http://localhost:8080; font-src 'self' https://fonts.gstatic.com data:"
+    content-security-policy: "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1208.0/; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src * 'self' data: https://s3.console.aws.amazon.com/ https://zipflixvideos.s3.amazonaws.com/; connect-src https://zipflixvideos.s3.amazonaws.com/ https://cognito-identity.us-east-1.amazonaws.com/ http://localhost:8080; font-src 'self' https://fonts.gstatic.com data:; media-src https://zipflixvideos.s3.amazonaws.com/ https://www.youtube.com/;"
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
