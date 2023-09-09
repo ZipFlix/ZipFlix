@@ -88,6 +88,7 @@ nav ul li a:hover {
   align-items: center;
 }
 
+#add-review-form,
 #add-video-form {
   text-align: center;
   padding: 20px;
@@ -95,6 +96,7 @@ nav ul li a:hover {
   max-width: 400px; 
 }
 
+#add-review-form input,
 #add-video-form input {
   padding: 7px;
   margin: 5px 15px 15px 15px;
@@ -104,6 +106,32 @@ nav ul li a:hover {
   border-radius: 5px;
   background-color: #730808;
   color: #ffffff;
+}
+
+#add-review-form label{
+  margin: 15px;
+  padding: 20px;
+  color: #ffffff;
+}
+
+textarea {
+  margin: 15px;
+  background-color: #730808;
+  color: #000000;
+  border: 2px solid #000000;
+  resize: none;
+  padding: 5px;
+}
+
+.write-review-link {
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 7px;
+  font-size: 12px;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
 }
 
 #add-video-form label {
@@ -116,6 +144,7 @@ nav ul li a:hover {
   font-weight: lighter;
 }
 
+#add-review-form button,
 #add-video-form button {
   margin: 20px;
   padding: 12px 20px;
@@ -125,6 +154,7 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
+#add-review-form button:hover,
 #add-video-form button:hover {
   background-color: #c13939; 
 }
@@ -163,6 +193,7 @@ nav ul li a:hover {
   flex: 1;
   margin-right: 20px;
   color: #fff;
+  text-align: center;
 }
 
 .genre-release-container {
