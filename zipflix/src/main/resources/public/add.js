@@ -111,20 +111,37 @@ function displaySearchResults(results) {
 async function postJSON(data) {
   try {
     // Upload the image to S3
-    const fileInput = document.getElementById('movieArtFile');
-    if (fileInput.files.length > 0) {
+    const fileInput1 = document.getElementById('movieArtFile');
+    if (fileInput1.files.length > 0) {
       console.log("Attempting to await s3");
       console.log("Awaiting...");
-      const formData = new FormData();
-      formData.append('file', fileInput.files[0]); // 'file' is the field name
+      const formData1 = new FormData();
+      formData1.append('file', fileInput1.files[0]); // 'file' is the field name
       // Log the FormData object
-      const FileData = formData.get('file');
-      console.log(FileData);
-      const imageUrl = await uploadToS3(formData);
+      const FileData1 = formData1.get('file');
+      console.log(FileData1);
+      const imageUrl = await uploadToS3(formData1);
       console.log("GOT S3 DATA")
       // Add the image URL to the data
       data.movieArtURL = imageUrl;
     }
+
+    // Upload the video to S3
+    const fileInput2 = document.getElementById('videoFile');
+    if (fileInput2.files.length > 0) {
+      console.log("Attempting to await s3");
+      console.log("Awaiting...");
+      const formData2 = new FormData();
+      formData2.append('file', fileInput2.files[0]); // 'file' is the field name
+      // Log the FormData object
+      const FileData2 = formData2.get('file');
+      console.log(FileData2);
+      const vidUrl = await uploadToS3(formData2);
+      console.log("GOT S3 DATA")
+      // Add the video URL to the data
+      data.videoURL = vidUrl;
+    }
+
     const response = await fetch(`${API_URL}/api/videos/`, {
       method: 'POST',
       headers: {
