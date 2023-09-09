@@ -110,6 +110,13 @@ function showVideoDetail(post) {
   leftContainer.appendChild(writeReviewLink);
 
 
+  // const writeReviewLink = document.createElement('a');
+  // writeReviewLink.href = `./review.html`;
+  // writeReviewLink.textContent = 'Write a Review';
+  // writeReviewLink.classList.add('write-review-link');
+
+  // leftContainer.appendChild(writeReviewLink);
+
   // Create the right side container
   const rightContainer = document.createElement('div');
   rightContainer.classList.add('image-container');
