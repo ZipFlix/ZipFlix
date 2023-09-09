@@ -92,7 +92,7 @@ nav ul li a:hover {
   text-align: center;
   padding: 20px;
   border-radius: 5px;
-  max-width: 400px; 
+  max-width: 400px;
 }
 
 #add-video-form input {
@@ -119,14 +119,14 @@ nav ul li a:hover {
 #add-video-form button {
   margin: 20px;
   padding: 12px 20px;
-  background-color: #010101; 
-  color: #fff; 
+  background-color: #010101;
+  color: #fff;
   border: none;
   border-radius: 5px;
 }
 
 #add-video-form button:hover {
-  background-color: #c13939; 
+  background-color: #c13939;
 }
 
 #search-input {
@@ -190,7 +190,7 @@ nav ul li a:hover {
 
 .video-container {
   display: inline-block;
-  width: 20%; 
+  width: 20%;
   box-sizing: border-box;
   padding: 10px 0px 10px 0px;
   text-align: center;
@@ -198,7 +198,7 @@ nav ul li a:hover {
 }
 
 .video-row {
-  clear: both; 
+  clear: both;
 }
 
 .reviews-container {
@@ -293,4 +293,39 @@ nav ul li a:hover {
   font-weight: bold;
   font-size: 16px;
   padding-top: 25px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Video player styles */
+#videoPlayer {
+  width: 100%;
 }
