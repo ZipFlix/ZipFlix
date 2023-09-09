@@ -13,7 +13,9 @@ async function fetchVideoById(videoid) {
 
 // Function to display reviews
 function displayReviews(reviews) {
+
     const reviewsContainer = document.getElementById("reviewlist-container");
+
     reviewsContainer.innerHTML = ""; // Clear previous reviews
 
     reviews.forEach((review) => {
@@ -41,11 +43,13 @@ reviewForm.addEventListener("submit", function (event) {
     const urlParams = new URLSearchParams(window.location.search);
     const videoid = urlParams.get("videoid");
 
+
     // Ensure videoid is a string (if not null)
     const stringVideoid = videoid ? videoid.toString() : null;
 
     // Fetch the video data by videoid
     fetchVideoById(stringVideoid)
+
         .then((videoData) => {
             if (!videoData) {
                 console.error("Video not found");
