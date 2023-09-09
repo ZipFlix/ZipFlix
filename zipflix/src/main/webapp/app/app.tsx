@@ -2,6 +2,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import './app.scss';
 import 'app/config/dayjs.ts';
 
+// import React, { useState } from 'react';
+// import VideoModal from './VideoModal';
+
+
 import React, { useEffect } from 'react';
 import { Card } from 'reactstrap';
 import { BrowserRouter } from 'react-router-dom';
@@ -60,4 +64,58 @@ export const App = () => {
   );
 };
 
+
+
+
+
+
+
+// ReactDOM.render(
+//   <App />,
+//     document.getElementById('root')
+// )
+//class VideoApp extends React.Component {
+
+  //constructor () {
+    //super()
+   // this.state = {
+     // isOpen: false
+    //}
+    //this.openModal = this.openModal.bind(this)
+  //}
+
+//   openModal () {
+//     this.setState({isOpen: true})
+//   }
+//
+//   render () {
+//     return (
+//       <React.Fragment>
+//         <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='L61p2uyiMSo' onClose={() => this.setState({isOpen: false})} />
+//         <button onClick={this.openModal}>Open</button>
+//       </React.Fragment>
+//     )
+//   }
+// }
+//     this.openModal = this.openModal.bind(this)
+//   }
+//
+//   openModal () {
+//     this.setState({isOpen: true})
+//   }
+//
+//   render () {
+//     return (
+//       <React.Fragment>
+//         <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='L61p2uyiMSo' onClose={() => this.setState({isOpen: false})} />
+//         <button onClick={this.openModal}>Open</button>
+//       </React.Fragment>
+//     )
+//   }
+// }
+// ReactDOM.render(
+//   <App />,
+//     document.getElementById('root')
+// )
 export default App;
+
