@@ -99,15 +99,15 @@ nav ul li a:hover {
 }
 
 #review-form-container {
-  display: flex; 
-  justify-content: space-between; 
+  display: flex;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
 .video-review-form {
-  display: flex; 
-  flex-direction: column; 
-  width: 50%; 
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 #reviewlist-container {
@@ -238,8 +238,8 @@ textarea {
 }
 
 .resized-image {
-  max-width: 350px;
-  max-height: 400px;
+  width: auto;
+  height: 550px;
 }
 
 .image-thumbnail {
