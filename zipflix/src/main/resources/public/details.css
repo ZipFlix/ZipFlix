@@ -332,3 +332,9 @@ textarea {
 #videoPlayer {
   width: 100%;
 }
+#console-output {
+  color: white; /* Change to your desired text color */
+}
+#console-output {
+  font-size: 16px; /* Change to your desired font size */
+}
