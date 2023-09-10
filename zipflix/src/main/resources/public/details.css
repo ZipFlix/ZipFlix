@@ -22,9 +22,9 @@ h4, a, p {
 
 #writeReviewLink {
   text-decoration: none;
-  margin-left: 270px;
-  padding: 30px 0px 30px 60px;
-  
+  padding: 20px;
+  margin: 10px;
+
 }
 
 h1 {
@@ -258,7 +258,7 @@ textarea {
 
 .video-row {
   clear: both;
-
+}
 .reviews-container {
   background-color: #000000;
   padding: 10px;
