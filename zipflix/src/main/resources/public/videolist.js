@@ -163,7 +163,7 @@ function showThrillerMovies(data) {
   const list = document.createDocumentFragment();
 
   // Filter movies by the "drama" genre
-  const thrillerMovies = data.filter(post => post.genre === 'Drama');
+  const thrillerMovies = data.filter(post => post.genre === 'Horror');
   thrillerMovies.forEach(function(post) {
     console.log("Video:", post);
 
