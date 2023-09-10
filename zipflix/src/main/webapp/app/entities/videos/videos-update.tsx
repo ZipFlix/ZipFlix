@@ -89,6 +89,7 @@ export const VideosUpdate = () => {
               <ValidatedField label="Description" id="videos-description" name="description" data-cy="description" type="text" />
               <ValidatedField label="Release Date" id="videos-releaseDate" name="releaseDate" data-cy="releaseDate" type="text" />
               <ValidatedField label="Movie Art URL" id="videos-movieArtURL" name="movieArtURL" data-cy="movieArtURL" type="text" />
+              <ValidatedField label="Background URL" id="videos-backgroundURL" name="backgroundURL" data-cy="backgroundURL" type="text" />
               <ValidatedField label="Video URL" id="videos-videoURL" name="videoURL" data-cy="videoURL" type="text" />
               <ValidatedField label="Genre" id="videos-genre" name="genre" data-cy="genre" type="text" />
               <ValidatedField id="videos-createdBy" name="createdBy" data-cy="createdBy" label="Created By" type="select">

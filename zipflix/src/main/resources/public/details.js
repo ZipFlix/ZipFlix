@@ -1,18 +1,20 @@
 const API_URL = `http://localhost:8080`
 
-function fetchVideosData() {
-    fetch(`${API_URL}/api/videos`)
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            showVideoList(data)
-        })
-        .catch((error) => {
-            console.log(`Error Fetching Data: ${error}`)
-            document.getElementById('posts').innerHTML = 'Error Loading Videos'
-        })
+function fetchVideo(videoid) {
+  fetch(`${API_URL}/api/videos/${videoid}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      // Check if the data contains a valid backgroundURL property
+      showVideoDetail(data);
+    })
+    .catch((error) => {
+      console.log(`Error Fetching data : ${error}`)
+      document.getElementById('post').innerHTML = 'Error Loading Single Video Data'
+    })
 }
+
 
 function fetchVideo(videoid) {
     fetch(`${API_URL}/api/videos/${videoid}`)
@@ -20,6 +22,10 @@ function fetchVideo(videoid) {
             return res.json();
         })
         .then((data) => {
+          const backgroundUR = data.backgroundURL;
+          console.log(backgroundUR);
+          // Pass the backgroundURL to setBodyBackground
+          setBodyBackground(backgroundUR);
             showVideoDetail(data)
         })
         .catch((error) => {
@@ -99,7 +105,7 @@ function showVideoDetail(post) {
     reviewsContainer.appendChild(reviewElement);
   });
 
-  
+
   // Append the reviewsContainer to the leftContainer
   leftContainer.appendChild(RecentReviewHeading);
   leftContainer.appendChild(reviewsContainer);
@@ -278,21 +284,25 @@ function hasVideoIdParam() {
 
 
 // Function to set the background image or color based on the presence of videoid
-function setBodyBackground() {
+function setBodyBackground(backgroundURL) {
   const body = document.body;
 
-  if (hasVideoIdParam()) {
+  if (backgroundURL) {
     console.log('Setting Background Image');
-    body.style.backgroundImage = 'url("Images/desktop-wallpaper-fonds-d-ecran-avatar-2-tous-les-avatar-2-background.jpg")';
+    body.style.backgroundImage = `url("${backgroundURL}")`;
     body.style.backgroundColor = 'transparent';
-    body.style.backgroundSize = 'cover';// Remove the background color
+    body.style.backgroundSize = 'cover'; // Set the background image
   } else {
     console.log('Setting color');
-    body.style.background = 'none';
-    body.style.backgroundColor = '#730808';
-   // Remove the background image
+    body.style.backgroundImage = 'none';
+    body.style.backgroundColor = '#000000'; // Set the background color
   }
 }
+
+
+
+
+
 
 
 // Call the function when the page loads

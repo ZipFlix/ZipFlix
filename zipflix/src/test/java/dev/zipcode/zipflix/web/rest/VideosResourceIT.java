@@ -50,6 +50,9 @@ class VideosResourceIT {
     private static final String DEFAULT_MOVIE_ART_URL = "AAAAAAAAAA";
     private static final String UPDATED_MOVIE_ART_URL = "BBBBBBBBBB";
 
+    private static final String DEFAULT_BACKGROUND_URL = "AAAAAAAAAA";
+    private static final String UPDATED_BACKGROUND_URL = "BBBBBBBBBB";
+
     private static final String DEFAULT_VIDEO_URL = "AAAAAAAAAA";
     private static final String UPDATED_VIDEO_URL = "BBBBBBBBBB";
 
@@ -88,6 +91,7 @@ class VideosResourceIT {
             .description(DEFAULT_DESCRIPTION)
             .releaseDate(DEFAULT_RELEASE_DATE)
             .movieArtURL(DEFAULT_MOVIE_ART_URL)
+            .backgroundURL(DEFAULT_BACKGROUND_URL)
             .videoURL(DEFAULT_VIDEO_URL)
             .genre(DEFAULT_GENRE);
         return videos;
@@ -105,6 +109,7 @@ class VideosResourceIT {
             .description(UPDATED_DESCRIPTION)
             .releaseDate(UPDATED_RELEASE_DATE)
             .movieArtURL(UPDATED_MOVIE_ART_URL)
+            .backgroundURL(UPDATED_BACKGROUND_URL)
             .videoURL(UPDATED_VIDEO_URL)
             .genre(UPDATED_GENRE);
         return videos;
@@ -132,6 +137,7 @@ class VideosResourceIT {
         assertThat(testVideos.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testVideos.getReleaseDate()).isEqualTo(DEFAULT_RELEASE_DATE);
         assertThat(testVideos.getMovieArtURL()).isEqualTo(DEFAULT_MOVIE_ART_URL);
+        assertThat(testVideos.getBackgroundURL()).isEqualTo(DEFAULT_BACKGROUND_URL);
         assertThat(testVideos.getVideoURL()).isEqualTo(DEFAULT_VIDEO_URL);
         assertThat(testVideos.getGenre()).isEqualTo(DEFAULT_GENRE);
     }
@@ -170,6 +176,7 @@ class VideosResourceIT {
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION)))
             .andExpect(jsonPath("$.[*].releaseDate").value(hasItem(DEFAULT_RELEASE_DATE)))
             .andExpect(jsonPath("$.[*].movieArtURL").value(hasItem(DEFAULT_MOVIE_ART_URL)))
+            .andExpect(jsonPath("$.[*].backgroundURL").value(hasItem(DEFAULT_BACKGROUND_URL)))
             .andExpect(jsonPath("$.[*].videoURL").value(hasItem(DEFAULT_VIDEO_URL)))
             .andExpect(jsonPath("$.[*].genre").value(hasItem(DEFAULT_GENRE)));
     }
@@ -207,6 +214,7 @@ class VideosResourceIT {
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION))
             .andExpect(jsonPath("$.releaseDate").value(DEFAULT_RELEASE_DATE))
             .andExpect(jsonPath("$.movieArtURL").value(DEFAULT_MOVIE_ART_URL))
+            .andExpect(jsonPath("$.backgroundURL").value(DEFAULT_BACKGROUND_URL))
             .andExpect(jsonPath("$.videoURL").value(DEFAULT_VIDEO_URL))
             .andExpect(jsonPath("$.genre").value(DEFAULT_GENRE));
     }
@@ -235,6 +243,7 @@ class VideosResourceIT {
             .description(UPDATED_DESCRIPTION)
             .releaseDate(UPDATED_RELEASE_DATE)
             .movieArtURL(UPDATED_MOVIE_ART_URL)
+            .backgroundURL(UPDATED_BACKGROUND_URL)
             .videoURL(UPDATED_VIDEO_URL)
             .genre(UPDATED_GENRE);
 
@@ -254,6 +263,7 @@ class VideosResourceIT {
         assertThat(testVideos.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testVideos.getReleaseDate()).isEqualTo(UPDATED_RELEASE_DATE);
         assertThat(testVideos.getMovieArtURL()).isEqualTo(UPDATED_MOVIE_ART_URL);
+        assertThat(testVideos.getBackgroundURL()).isEqualTo(UPDATED_BACKGROUND_URL);
         assertThat(testVideos.getVideoURL()).isEqualTo(UPDATED_VIDEO_URL);
         assertThat(testVideos.getGenre()).isEqualTo(UPDATED_GENRE);
     }
@@ -330,6 +340,7 @@ class VideosResourceIT {
             .title(UPDATED_TITLE)
             .description(UPDATED_DESCRIPTION)
             .releaseDate(UPDATED_RELEASE_DATE)
+            .backgroundURL(UPDATED_BACKGROUND_URL)
             .videoURL(UPDATED_VIDEO_URL)
             .genre(UPDATED_GENRE);
 
@@ -349,6 +360,7 @@ class VideosResourceIT {
         assertThat(testVideos.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testVideos.getReleaseDate()).isEqualTo(UPDATED_RELEASE_DATE);
         assertThat(testVideos.getMovieArtURL()).isEqualTo(DEFAULT_MOVIE_ART_URL);
+        assertThat(testVideos.getBackgroundURL()).isEqualTo(UPDATED_BACKGROUND_URL);
         assertThat(testVideos.getVideoURL()).isEqualTo(UPDATED_VIDEO_URL);
         assertThat(testVideos.getGenre()).isEqualTo(UPDATED_GENRE);
     }
@@ -370,6 +382,7 @@ class VideosResourceIT {
             .description(UPDATED_DESCRIPTION)
             .releaseDate(UPDATED_RELEASE_DATE)
             .movieArtURL(UPDATED_MOVIE_ART_URL)
+            .backgroundURL(UPDATED_BACKGROUND_URL)
             .videoURL(UPDATED_VIDEO_URL)
             .genre(UPDATED_GENRE);
 
@@ -389,6 +402,7 @@ class VideosResourceIT {
         assertThat(testVideos.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testVideos.getReleaseDate()).isEqualTo(UPDATED_RELEASE_DATE);
         assertThat(testVideos.getMovieArtURL()).isEqualTo(UPDATED_MOVIE_ART_URL);
+        assertThat(testVideos.getBackgroundURL()).isEqualTo(UPDATED_BACKGROUND_URL);
         assertThat(testVideos.getVideoURL()).isEqualTo(UPDATED_VIDEO_URL);
         assertThat(testVideos.getGenre()).isEqualTo(UPDATED_GENRE);
     }

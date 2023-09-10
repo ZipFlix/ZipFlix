@@ -4,6 +4,7 @@ title String
 description String
 releaseDate String
 movieArtURL String
+backgroundURL String
 videoURL String
 genre String
 }
