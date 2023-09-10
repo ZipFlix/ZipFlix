@@ -207,7 +207,7 @@ h3 {
 .search-results-dropdown {
   display: block;
   position: absolute;
-  background-color: black;
+  background-color: #000000;
   color: #0c0c0c;
   border: 1px solid #000000;
   max-height: 150px;
@@ -216,7 +216,7 @@ h3 {
   right:0
 }
 .search-results-dropdown input[type="text"] {
-  color: #0c0c0c;
+  color: #d2c7c7;
   border: none;
   padding: 5px;
   width: 100%;
@@ -234,7 +234,7 @@ h3 {
   padding: 10px;
   border-bottom: 1px solid #050505;
   transition: background-color 0.2s;
-  color: #0c0c0c;
+  color: #000000;
   width: 300px;
   display: flex;
 }
@@ -261,7 +261,7 @@ h3 {
 
 #search-results-list li {
   padding: 10px;
-  color: black;
+  color: #ffffff;
 }
 #search-results-list li a {
   color: #efeeee;

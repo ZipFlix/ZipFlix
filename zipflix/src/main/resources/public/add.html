@@ -96,9 +96,12 @@
             <input type="text" id="description" name="description" placeholder="Description..."><br>
             <label for="movieArtFile">Upload Image:</label>
             <input type="file" id="movieArtFile" name="movieArtFile" accept="image/*" >
+            <label for="movieBackFile">Upload Background Image:</label>
+            <input type="file" id="movieBackFile" name="movieArtFile" accept="image/*" >
             <label for="videoFile">Upload Video:</label>
             <input type="file" id="videoFile" name="videoFile">
             <button type="submit" onclick="doPostOfForm()">Add Video</button>
+            <textarea id="console-output" rows="4" cols="50" readonly></textarea>
         </form>
     </section>
     <script>

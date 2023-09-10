@@ -22,6 +22,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "backgroundURL",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "videoURL",
       "fieldType": "String"
     },

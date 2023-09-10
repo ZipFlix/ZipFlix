@@ -7,6 +7,7 @@ export interface IVideos {
   description?: string | null;
   releaseDate?: string | null;
   movieArtURL?: string | null;
+  backgroundURL?: string | null;
   videoURL?: string | null;
   genre?: string | null;
   reviews?: IReviews[] | null;

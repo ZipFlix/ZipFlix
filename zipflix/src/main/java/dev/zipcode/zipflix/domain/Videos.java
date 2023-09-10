@@ -37,6 +37,9 @@ public class Videos implements Serializable {
     @Column(name = "movie_art_url")
     private String movieArtURL;
 
+    @Column(name = "background_url")
+    private String backgroundURL;
+
     @Column(name = "video_url")
     private String videoURL;
 
@@ -116,6 +119,19 @@ public class Videos implements Serializable {
 
     public void setMovieArtURL(String movieArtURL) {
         this.movieArtURL = movieArtURL;
+    }
+
+    public String getBackgroundURL() {
+        return this.backgroundURL;
+    }
+
+    public Videos backgroundURL(String backgroundURL) {
+        this.setBackgroundURL(backgroundURL);
+        return this;
+    }
+
+    public void setBackgroundURL(String backgroundURL) {
+        this.backgroundURL = backgroundURL;
     }
 
     public String getVideoURL() {
@@ -216,6 +232,7 @@ public class Videos implements Serializable {
             ", description='" + getDescription() + "'" +
             ", releaseDate='" + getReleaseDate() + "'" +
             ", movieArtURL='" + getMovieArtURL() + "'" +
+            ", backgroundURL='" + getBackgroundURL() + "'" +
             ", videoURL='" + getVideoURL() + "'" +
             ", genre='" + getGenre() + "'" +
             "}";
