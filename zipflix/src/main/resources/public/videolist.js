@@ -8,11 +8,9 @@ function fetchVideosData() {
     .then((data) => {
       showVideoList(data)
       showActionMovies(data)
-      showAnimationMovies(data)
       showDramaMovies(data)
       showComedyMovies(data)
-      showFantasyMovies(data)
-      showHorrorMovies(data)
+      showThrillerMovies(data)
     })
     .catch((error) => {
       console.log(`Error Fetching Data: ${error}`)
@@ -102,35 +100,6 @@ function showVideoList(data) {
   container.appendChild(list);
 }
 
-function showAnimationMovies(data) {
-  const container = document.getElementById('animation-movies-container'); // Container for action movies
-  const list = document.createDocumentFragment();
-
-  // Filter movies by the "action" genre
-  const animationMovies = data.filter(post => post.genre === 'Animation');
-  animationMovies.forEach(function(post) {
-    console.log("Video:", post);
-
-    const movieContainer = document.createElement('div');
-    movieContainer.classList.add('image-list-item');
-
-    const link = document.createElement('a');
-    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
-
-    const image = document.createElement('img');
-    image.src = post.movieArtURL;
-    image.alt = post.title;
-    image.className = 'image-item';
-
-    link.appendChild(image);
-    movieContainer.appendChild(link);
-
-    list.appendChild(movieContainer);
-  });
-
-  container.appendChild(list);
-}
-
 function showDramaMovies(data) {
   const container = document.getElementById('drama-movies-container'); // Container for drama movies
   const list = document.createDocumentFragment();
@@ -189,42 +158,13 @@ function showComedyMovies(data) {
   container.appendChild(list);
 }
 
-function showFantasyMovies(data) {
-  const container = document.getElementById('fantasy-movies-container'); // Container for action movies
-  const list = document.createDocumentFragment();
-
-  // Filter movies by the "action" genre
-  const fantasyMovies = data.filter(post => post.genre === 'Fantasy');
-  fantasyMovies.forEach(function(post) {
-    console.log("Video:", post);
-
-    const movieContainer = document.createElement('div');
-    movieContainer.classList.add('image-list-item');
-
-    const link = document.createElement('a');
-    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
-
-    const image = document.createElement('img');
-    image.src = post.movieArtURL;
-    image.alt = post.title;
-    image.className = 'image-item';
-
-    link.appendChild(image);
-    movieContainer.appendChild(link);
-
-    list.appendChild(movieContainer);
-  });
-
-  container.appendChild(list);
-}
-
-function showHorrorMovies(data) {
-  const container = document.getElementById('horror-movies-container'); // Container for drama movies
+function showThrillerMovies(data) {
+  const container = document.getElementById('thriller-movies-container'); // Container for drama movies
   const list = document.createDocumentFragment();
 
   // Filter movies by the "drama" genre
-  const horrorMovies = data.filter(post => post.genre === 'Horror');
-  horrorMovies.forEach(function(post) {
+  const thrillerMovies = data.filter(post => post.genre === 'Horror');
+  thrillerMovies.forEach(function(post) {
     console.log("Video:", post);
 
     const movieContainer = document.createElement('div');

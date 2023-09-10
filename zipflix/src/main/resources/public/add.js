@@ -113,6 +113,7 @@ async function postJSON(data) {
     // Upload the image to S3
     const fileInput1 = document.getElementById('movieArtFile');
     if (fileInput1.files.length > 0) {
+      logToConsole("Retrieving uploaded image from HTML");
       console.log("Attempting to await s3");
       console.log("Awaiting...");
       const formData1 = new FormData();
@@ -120,15 +121,16 @@ async function postJSON(data) {
       // Log the FormData object
       const FileData1 = formData1.get('file');
       console.log(FileData1);
+      logToConsole("Awaiting S3 Movie Art Upload");
       const imageUrl = await uploadToS3(formData1);
-      console.log("GOT S3 DATA")
+      logToConsole("Movie Art Uploaded to S3!");
       // Add the image URL to the data
       data.movieArtURL = imageUrl;
     }
-
     // Upload the video to S3
     const fileInput2 = document.getElementById('videoFile');
     if (fileInput2.files.length > 0) {
+      logToConsole("Retrieving uploaded video from HTML");
       console.log("Attempting to await s3");
       console.log("Awaiting...");
       const formData2 = new FormData();
@@ -136,30 +138,58 @@ async function postJSON(data) {
       // Log the FormData object
       const FileData2 = formData2.get('file');
       console.log(FileData2);
+      logToConsole("Awaiting S3 Video Upload");
       const vidUrl = await uploadToS3(formData2);
-      console.log("GOT S3 DATA")
+      logToConsole("Video Uploaded to S3!")
       // Add the video URL to the data
       data.videoURL = vidUrl;
     }
+      const fileInput3 = document.getElementById('movieBackFile');
+      if (fileInput3.files.length > 0) {
+        logToConsole("Retrieving background from HTML");
+        console.log("Attempting to await s3");
+        console.log("Awaiting...");
+        const formData3 = new FormData();
+        formData3.append('file', fileInput3.files[0]); // 'file' is the field name
+        // Log the FormData object
+        const FileData3 = formData3.get('file');
+        console.log(FileData3);
+        logToConsole("Uploading Background to S3!");
+        const backUrl = await uploadToS3(formData3);
+        console.log("GOT S3 DATA")
+        logToConsole("Background Uploaded!");
+        // Add the video URL to the data
+        data.backgroundURL = backUrl;
+        logToConsole("Successfully Uploaded!")
+      }
+      const response = await fetch(`${API_URL}/api/videos/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      console.log('Success:', result);
+      const addedVideoId = result.id;
+      const detailPageUrl = `/details.html?videoid=${addedVideoId}`;
 
-    const response = await fetch(`${API_URL}/api/videos/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    const result = await response.json();
-    console.log('Success:', result);
-    const addedVideoId = result.id;
-    const detailPageUrl = `/details.html?videoid=${addedVideoId}`;
-
-    // Redirect to the detail page
-    window.location.href = detailPageUrl;
-  } catch (error) {
-    console.error('Error:', error);
+      // Redirect to the detail page
+      window.location.href = detailPageUrl;
+    }
+  catch
+    (error)
+    {
+      console.error('Error:', error);
+    }
   }
+function logToConsole(message) {
+  const consoleOutput = document.getElementById('console-output');
+  consoleOutput.value += message + '\n';
+  // Scroll to the bottom to always show the latest log message
+  consoleOutput.scrollTop = consoleOutput.scrollHeight;
 }
+
 const form = document.getElementById("add-video-form");
 form.addEventListener("submit", function(event) {
   doPostOfForm(event);

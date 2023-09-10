@@ -133,6 +133,9 @@ public class VideosResource {
                 if (videos.getMovieArtURL() != null) {
                     existingVideos.setMovieArtURL(videos.getMovieArtURL());
                 }
+                if (videos.getBackgroundURL() != null) {
+                    existingVideos.setBackgroundURL(videos.getBackgroundURL());
+                }
                 if (videos.getVideoURL() != null) {
                     existingVideos.setVideoURL(videos.getVideoURL());
                 }
