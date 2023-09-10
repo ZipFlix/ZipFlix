@@ -6,7 +6,9 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>ZipFlix</title>
-    <link rel="stylesheet" href="./details.css">
+    <!-- <link rel="stylesheet" href="./details.css"> -->
+    <link rel="stylesheet" href="./review.css">
+    <link rel="stylesheet" type="text/css" href="nav.css">
     <script src="./review.js" async defer></script>
 
 
@@ -79,21 +81,21 @@
           </div>
         </nav>
     </header>
-    <h1>Add a Review</h1>
+    <section id="section">
+        <div id='left'>
+            <h3>Add a Review</h3>
+            <form id='add-review-form'>
+                <div class="review-form-container">
+                    <label for='review-message'>Review Message:</label>
+                    <textarea id='review-message' name='review-message' required></textarea>
+                    <button type='submit'>Add Review</button>
+                </div>
+            </form>
+        </div>
+        <div id="right">
+            <div id='post'></div>
+        </div>
 
-    <section id="review-form-container">
-        <div id='post'></div>
-        <div class="video-review-form">
-            <form id="add-review-form">
-                <label for="message">Review: </label><br>
-                <textarea id="message" name="message" rows="6" cols="50" placeholder="Write your review here..."></textarea><br>
-                <button type="submit">Add Review</button>
-            </form>   
-        </div>
-    
-        <div id="reviewlist-container">
-            <div id="existing-reviews"></div>
-        </div>
     </section>
     
 

@@ -1,11 +1,11 @@
 body {
   font-family: "Arial", sans-serif;
   margin: auto;
-  background: #000000;
-
+  background-color: #000000;
+  padding: 0;
 }
 
-h4, a, p {
+h4, p {
   color: #fff;
   margin: 15px;
   font-weight: lighter;
@@ -24,79 +24,25 @@ h4, a, p {
   text-decoration: none;
   padding: 20px;
   margin: 10px;
-
 }
 
 h1 {
   color: #fff;
   text-align: center;
-  margin-bottom: 0px;
+  margin-top: 60px;
+  margin-bottom: 10px;
 }
 
-header {
-  background-color: #030303;
-  color: #fff;
-  padding: 0px 10px 0px 10px;
-
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.right-links {
-  padding-top: 20px;
-}
-
-.left-links ul,
-.middle-links ul,
-.right-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.left-links ul li,
-.middle-links ul li,
-.right-links ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-.left-links a,
-.right-links a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.left-links a:hover,
-.right-links a:hover {
-  text-decoration: underline;
-}
-
-#logo {
-  font-size: 32px;
-  font-weight: bolder;
-  font-style: italic;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
 
 #form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 60px 20px 20px 20px;
 }
+
+
 
 #review-form-container {
   display: flex; 
@@ -128,9 +74,9 @@ nav ul li a:hover {
   margin: 5px 15px 15px 15px;
   display: inline-block;
   width: 180px;
-  border: 2px solid #000000;
+  border: 1px solid #730e0e;
   border-radius: 5px;
-  background-color: #730808;
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -174,38 +120,17 @@ textarea {
 #add-video-form button {
   margin: 20px;
   padding: 12px 20px;
-  background-color: #010101;
+  background-color: #730808;
   color: #fff;
-  border: none;
+  border: 1px solid #730808;
   border-radius: 5px;
 }
 
 #add-review-form button:hover,
 #add-video-form button:hover {
-  background-color: #c13939;
+  background-color: #cf2525;
 }
 
-#search-input {
-  padding: 10px;
-  width: 150px;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  background-color: #000000;
-  color: #ffffff;
-}
-
-#search-form button {
-  padding: 10px 20px;
-  background-color: #730808;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#search-form button:hover {
-  background-color: #c13939;
-}
 
 .video-details-container {
   display: flex;
@@ -238,8 +163,8 @@ textarea {
 }
 
 .resized-image {
-  max-width: 350px;
-  max-height: 400px;
+  width: auto;
+  height: 550px;
 }
 
 .image-thumbnail {
@@ -268,6 +193,7 @@ textarea {
   color: #fff;
 }
 
+
 /* Style individual review elements */
 .review {
   margin-bottom: 10px;
@@ -280,6 +206,22 @@ textarea {
 /* Add spacing between review messages */
 .review p {
   margin: 0;
+}
+
+.review-button {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  background-color: #730808;
+  color: #fff;
+  border: 1px solid #730808;
+  border-radius: 5px;
+}
+
+.button-wrapper {
+  display: flex; 
+  margin-top: 25px;
+  justify-content: center;
 }
 
 /* Dropdown menu styles */
