@@ -51,7 +51,7 @@ const AppRoutes = () => {
           </Route>
         </Route>
         <Route
-          path="admin/*"
+          path="/videolist.html"
           element={
             <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN]}>
               <Admin />
