@@ -1,43 +1,69 @@
-const API_URL = `http://localhost:8080`;
+const API_URL = `http://localhost:8080`
 
-// Function to fetch video data by videoid
-async function fetchVideoById(videoid) {
+async function fetchVideo(videoid) {
     try {
-        const response = await fetch(`${API_URL}/api/videos/${videoid}`);
-        return await response.json();
+        const res = await fetch(`${API_URL}/api/videos/${videoid}`);
+        const data = await res.json();
+        showVideoReviews(data); // Display reviews after successfully fetching video data
     } catch (error) {
-        console.error("Error fetching video data:", error);
-        return null;
+        console.log(`Error Fetching data : ${error}`);
+        document.getElementById('post').innerHTML = 'Error Loading Single Video Data';
+        throw error;
     }
 }
 
-// Function to display reviews
-function displayReviews(reviews) {
+function showVideoReviews(post) {
+    const element = document.getElementById('post');
+    element.innerHTML = ''; // Clear any existing content
+  
+    // Create a container for the video details
+    const container = document.createElement('div');
+    container.classList.add('video-reviews-container');
 
-    const reviewsContainer = document.getElementById("reviewlist-container");
+    const reviewsHeader = document.createElement('h3');
+    reviewsHeader.innerHTML = `${post.title}`;
+    reviewsHeader.classList.add('center-text');
+    const reviewsContainer = document.createElement('div');
+    reviewsContainer.classList.add('reviews-container');
 
-    reviewsContainer.innerHTML = ""; // Clear previous reviews
-
-    reviews.forEach((review) => {
-        const reviewElement = document.createElement("div");
-        reviewElement.classList.add("review");
-
-        const reviewMessage = document.createElement("p");
+    post.reviews.forEach((review) => {
+        const reviewElement = document.createElement('div');
+        reviewElement.classList.add('review');
+    
+        const reviewMessage = document.createElement('p');
         reviewMessage.innerHTML = review.message;
-
+    
         reviewElement.appendChild(reviewMessage);
         reviewsContainer.appendChild(reviewElement);
-    });
-}
+      });
 
+      const backButton = document.createElement('button');
+      backButton.textContent = 'Back to Video Details';
+      backButton.classList.add('back-button');
 
-// Handle form submission
-const reviewForm = document.getElementById("add-review-form");
-reviewForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
+      backButton.addEventListener('click', () => {
+          window.location.href = `/details.html?videoid=${post.id}`;
+      });
+    
+      const buttonWrapper = document.createElement('div'); 
+      buttonWrapper.classList.add('button-wrapper'); 
+      buttonWrapper.appendChild(backButton); 
+  
 
-    // Get the review message from the form
-    const reviewMessage = document.getElementById("message").value;
+    container.appendChild(reviewsHeader);
+    container.appendChild(reviewsContainer);
+    container.appendChild(buttonWrapper);
+    element.appendChild(container);
+
+    // Add an "Add Review" form to the left panel
+    const leftPanel = document.getElementById('left');
+    leftPanel.innerHTML = '';
+    const addReviewForm = document.createElement('form');
+    addReviewForm.id = 'add-review-form';
+    addReviewForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+    const reviewMessage = document.getElementById("review-message").value;
 
     // Get the videoid from the URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -46,91 +72,97 @@ reviewForm.addEventListener("submit", function (event) {
     // Ensure videoid is a string (if not null)
     const stringVideoid = videoid ? videoid.toString() : null;
 
-    // Fetch the video data by videoid
-    fetchVideoById(stringVideoid)
-        .then((videoData) => {
-            if (!videoData) {
-                console.error("Video not found");
-                return;
-            }
-
-            // Create a new review object
-            const newReview = {
-                id: videoData.reviews.length + 1, // Generate a new unique ID
-                message: reviewMessage,
-            };
-
-            // Add the new review to the video's reviews array
-            videoData.reviews.push(newReview);
-
-            // Send a PUT request to update the video with the new review
-            fetch(`${API_URL}/api/videos/${stringVideoid}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(videoData),
-            })
-            .then((response) => {
-                if (response.ok) {
-                    console.log("Review added successfully");
-                    // Clear the input field
-                    document.getElementById("message").value = "";
-
-                    // Fetch and display the updated reviews associated with the video
-                    displayReviews(videoData.reviews);
-                } else {
-                    console.error("Failed to add review");
-                }
-            })
-            .catch((error) => {
-                console.error("Error updating video with review:", error);
-            });
-        });
-});
-
-// Function to fetch existing reviews by videoid
-async function fetchExistingReviews(videoid) {
-    try {
-        console.log("Fetching existing reviews for videoid:", videoid);
-
-        const response = await fetch(`${API_URL}/api/videos/${videoid}`);
-        if (!response.ok) {
-            throw new Error(`Failed to fetch reviews. Status code: ${response.status}`);
-        }
-
-        const videoData = await response.json();
-
-        if (videoData && videoData.reviews) {
-            console.log("Fetched existing reviews:", videoData.reviews);
-            return videoData.reviews; // Return the reviews
-        } else {
-            console.log("No reviews found for videoid:", videoid);
-            return []; // Return an empty array if no reviews are found
-        }
-    } catch (error) {
-        console.error("Error fetching existing reviews:", error);
-        return []; // Return an empty array in case of an error
-    }
-}
-
-
-document.addEventListener("DOMContentLoaded", async function () {
-    // Get the videoid from the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const videoid = urlParams.get("videoid");
-    
-    // Ensure videoid is a string (if not null)
-    const stringVideoid = videoid ? videoid.toString() : null;
-    console.log("videoid:", stringVideoid);
-    
-    // Fetch and display existing reviews for the video
     if (stringVideoid) {
-        try {
-            const existingReviews = await fetchExistingReviews(stringVideoid);
-            displayReviews(existingReviews);
-        } catch (error) {
-            console.error("Error in fetching and displaying existing reviews:", error);
-        }
+        // Create a new review object
+        const newReview = {
+            message: reviewMessage,
+            videoName: {
+                id: parseInt(stringVideoid), // Parse the videoid as an integer
+            },
+        };
+
+        // Send a POST request to create the new review
+        fetch(`${API_URL}/api/reviews`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newReview),
+        })
+        .then((response) => {
+            if (response.ok) {
+                console.log("Review added successfully");
+                // Clear the input field
+                document.getElementById("review-message").value = "";
+
+                // Fetch the video details to get the updated reviews property
+                return fetch(`${API_URL}/api/videos/${stringVideoid}`);
+            } else {
+                console.error("Failed to add review");
+            }
+        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Failed to fetch video details");
+            }
+        })
+        .then((videoData) => {
+            // Update the displayed reviews with the new one
+            const reviewElement = document.createElement('div');
+            reviewElement.classList.add('review');
+            const reviewMessage = document.createElement('p');
+            reviewMessage.innerHTML = newReview.message;
+            reviewElement.appendChild(reviewMessage);
+            reviewsContainer.appendChild(reviewElement);
+        })
+        .catch((error) => {
+            console.error("Error adding review:", error);
+        });
+    } else {
+        console.error("Invalid videoid");
     }
-});
+    });
+    const formHeader = document.createElement('h3');
+    formHeader.innerHTML = "Add a Review";
+    formHeader.classList.add('form-header');
+
+    const reviewMessageInput = document.createElement('textarea');
+    reviewMessageInput.id = 'review-message';
+    reviewMessageInput.name = 'review-message';
+    reviewMessageInput.required = true;
+
+    const submitButton = document.createElement('button');
+    submitButton.type = 'submit';
+    submitButton.textContent = 'Add Review';
+
+    addReviewForm.appendChild(formHeader);
+    addReviewForm.appendChild(reviewMessageInput);
+    addReviewForm.appendChild(submitButton);
+    leftPanel.appendChild(addReviewForm);
+}
+
+
+function parseVideoId() {
+    try {
+        var url_string = (window.location.href).toLowerCase();
+        var url = new URL(url_string);
+        var videoid = url.searchParams.get("videoid");
+        return videoid
+      } catch (error) {
+        console.log("Issues with Parsing URL Parameter's - " + error);
+        return "0"
+      }
+}
+
+function handlePages() {
+  let videoid = parseVideoId();
+  console.log("videoId: ", videoid);
+
+  if (videoid != null) {
+      console.log("found a videoId");
+      fetchVideo(videoid);
+  } 
+}
+handlePages();
