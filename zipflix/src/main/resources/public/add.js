@@ -1,3 +1,4 @@
+logToConsole("AWS Upload Console: Please Upload A Video!");
 const API_URL = `http://localhost:8080`
 
 function doPostOfForm(event) {
@@ -191,6 +192,7 @@ function logToConsole(message) {
 }
 
 const form = document.getElementById("add-video-form");
+
 form.addEventListener("submit", function(event) {
   doPostOfForm(event);
 });
