@@ -289,7 +289,7 @@ function setBodyBackground() {
   } else {
     console.log('Setting color');
     body.style.background = 'none';
-    body.style.backgroundColor = '#730808';
+    body.style.backgroundColor = '#000000';
    // Remove the background image
   }
 }
