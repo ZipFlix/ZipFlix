@@ -106,10 +106,24 @@ function showVideoDetail(post) {
   });
 
 
+  const reviewButton = document.createElement('button');
+      reviewButton.textContent = 'Write a Review';
+      reviewButton.classList.add('review-button');
+
+      reviewButton.addEventListener('click', () => {
+          window.location.href = `/review.html?videoid=${post.id}`;
+      });
+    
+      const buttonWrapper = document.createElement('div'); 
+      buttonWrapper.classList.add('button-wrapper'); 
+      buttonWrapper.appendChild(reviewButton); 
+  
+      reviewsContainer.appendChild(buttonWrapper);
+  
+
   // Append the reviewsContainer to the leftContainer
   leftContainer.appendChild(RecentReviewHeading);
   leftContainer.appendChild(reviewsContainer);
-  leftContainer.appendChild(writeReviewLink);
 
 
   // Create the right side container
@@ -147,14 +161,8 @@ function showVideoDetail(post) {
   });
   imageLink.appendChild(image);
 
-  // const writeReviewLink = document.createElement('button');
-  // writeReviewLink.href = `./review.html?videoid=${post.id}`;
-  // writeReviewLink.textContent = 'Write a Review';
-  // writeReviewLink.classList.add('write-review-link');
-
 
   rightContainer.appendChild(imageLink);
-  // rightContainer.appendChild(writeReviewLink);
 
   container.appendChild(leftContainer);
   container.appendChild(rightContainer);
@@ -180,10 +188,6 @@ function handlePages() {
   if (videoid != null) {
       console.log("found a videoId");
       fetchVideo(videoid);
-
-      // Set the correct href for the "Write a Review" link
-      const writeReviewLink = document.getElementById("writeReviewLink");
-      writeReviewLink.href = `./review.html?videoid=${videoid}`;
   } else {
       console.log("load all videos");
       fetchVideosData();
