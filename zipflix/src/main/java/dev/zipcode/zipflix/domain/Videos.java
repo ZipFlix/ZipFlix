@@ -47,7 +47,7 @@ public class Videos implements Serializable {
     private String genre;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "videoName")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    // @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "createdBy", "videoName" }, allowSetters = true)
     private Set<Reviews> reviews = new HashSet<>();
 
