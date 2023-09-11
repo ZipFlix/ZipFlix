@@ -19,7 +19,8 @@ color: #000000;
 }
 
 h3 {
-color: #ffffff;
+  font-size: 28px;
+  color: #ffffff;
 }
 
 
@@ -36,8 +37,13 @@ color: #ffffff;
     padding: 6px 10px;
     background-color: #730808;
     color: #fff;
+    font-size: 15px;
     border: 1px solid #730808;
     border-radius: 5px;
+}
+
+.back-button:hover {
+  background-color: #cf2525;
 }
 
 .center-text {
@@ -49,8 +55,8 @@ color: #ffffff;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     font-weight: bold;
-    font-size: 16px;
-    padding-top: 25px;
+    font-size: 28px;
+    padding: 22px;
   }
 
 .video-reviews-container {
@@ -87,6 +93,8 @@ color: #ffffff;
   .review p {
     margin: 0;
     text-align: center;
+    font-size: 18px;
+    font-style: italic;
   }
 
 #add-review-form {
@@ -109,7 +117,7 @@ border-radius: 5px;
 background-color: #000000;
 color: #ffffff;
 resize: none;
-font-size: 12px;
+font-size: 14px;
 }
 
 #add-review-form h3{
@@ -130,6 +138,7 @@ background-color: #730808;
 color: #fff;
 border: 1px solid #730808;
 border-radius: 5px;
+font-size: 15px;
 }
 
 #add-review-form button:hover {

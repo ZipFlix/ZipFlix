@@ -1,7 +1,7 @@
 header {
     background-color: #030303;
     color: #fff;
-    padding: 0px 10px 0px 10px;
+    padding: 10px;
   }
   
   nav {
@@ -12,6 +12,10 @@ header {
   
   .right-links {
     padding-top: 20px;
+  }
+  
+  .middle-links a {
+    font-size: 18px;
   }
   
   .left-links ul,
@@ -41,7 +45,7 @@ header {
   }
   
   #logo {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bolder;
     font-style: italic;
   }
@@ -52,16 +56,18 @@ header {
   }
   
   nav ul li a:hover {
-    text-decoration: underline;
+    font-weight: bolder;
+    color: #730808;
   }
 
   #search-input {
     padding: 10px;
-    width: 110px;
+    width: 120px;
     border: 1px solid #ffffff;
     border-radius: 5px;
     background-color: #000000;
     color: #ffffff;
+    font-size: 12px;
   }
   
   #search-form button {
@@ -70,7 +76,7 @@ header {
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    font-size: 14px;
   }
   
   #search-form button:hover {
