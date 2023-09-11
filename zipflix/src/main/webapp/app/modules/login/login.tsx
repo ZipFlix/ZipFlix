@@ -22,14 +22,17 @@ export const Login = () => {
 
   const handleClose = () => {
     setShowModal(false);
-    navigate('/');
+    navigate('/videolist.html');
   };
 
   const { from } = (location.state as any) || { from: { pathname: '/', search: location.search } };
   if (isAuthenticated) {
-    return <Navigate to={from} replace />;
+    // return <Navigate to={from} replace />;
+    return <Navigate to="/videolist.html" replace />;
   }
   return <LoginModal showModal={showModal} handleLogin={handleLogin} handleClose={handleClose} loginError={loginError} />;
 };
 
+
 export default Login;
+

@@ -5,14 +5,10 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
-
-
   <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
+    <link rel="stylesheet" type="text/css" href="nav.css">
     <script src="./details.js" async defer></script>
-
-
     <style>
         /* dropdown menu */
         .genre-dropdown {
@@ -52,7 +48,7 @@
             </div>
             <div class="middle-links">
                 <ul>
-                    <li><a href="./Home.html">Home</a></li>
+                    <li><a href="./videolist.html">Home</a></li>
                     <li class="genre-dropdown">
                         <a href="#" id="genre-dropdown-trigger">Genre</a>
                         <div class="genre-dropdown-content" id="genreDropdown">
@@ -64,7 +60,6 @@
                             <a href="./genre.html?genre=Horror">Horror</a>
                         </div>
                     </li>
-                    <li><a href="./listdetail.html">My List</a></li>
                     <li><a href="./add.html">Add Video</a></li>
                 </ul>
             </div>
@@ -86,7 +81,15 @@
     <section id="section">
         <div id='post'></div>
     </section>
-
+    <div id="videoModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <video controls muted id="videoPlayer">
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
     <script>
         // JavaScript to handle the dropdown menu
         const genreDropdownTrigger = document.getElementById("genre-dropdown-trigger");
@@ -109,6 +112,9 @@
                 genreDropdown.style.display = "none";
             }
         });
+
+        
+
     </script>
 
 </body>

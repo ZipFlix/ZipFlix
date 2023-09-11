@@ -5,44 +5,82 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>ZipFlix</title>
-  <link rel="stylesheet" type="text/css" href="videolist.css">
+  <link rel="stylesheet" href="videolist.css">
+  <link rel="stylesheet" type="text/css" href="nav.css">
   <script src="videolist.js" async defer></script>
+
+  <style>
+    /* dropdown menu */
+    .genre-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .genre-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #000000;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .genre-dropdown:hover .genre-dropdown-content {
+        display: block;
+    }
+
+    .genre-dropdown-content a {
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .genre-dropdown-content a:hover {
+        background-color: #000000;
+    }
+</style>
+
 </head>
 <body>
-<header>
-  <div class="logo">ZIPFLIX</div>
-    <ul class="tabs">
-      <li class="tab"><a href="videolist.html">Home</a></li>
-<!--      <li class="tab"><a href="genre.html">Genres</a></li>-->
-      <div class="dropdown">
-        <button class="dropdown">Genres</button>
-        <div class="dropdown-content">
-          <a href="genre.html?genre=Action">Action</a>
-          <a href="genre.html?genre=Animation">Animation</a>
-          <a href="genre.html?genre=Comedy">Comedy</a>
-          <a href="genre.html?genre=Drama">Drama</a>
-          <a href="genre.html?genre=Fantasy">Fantasy</a>
-          <a href="genre.html?genre=Horror">Horror</a>
+  <header>
+    <nav>
+        <div class="left-links">
+            <ul><li id="logo">ZipFlix</li></ul>
         </div>
+        <div class="middle-links">
+            <ul>
+                <li><a href="./videolist.html">Home</a></li>
+                <li class="genre-dropdown">
+                    <a href="#" id="genre-dropdown-trigger">Genre</a>
+                    <div class="genre-dropdown-content" id="genreDropdown">
+                        <a href="./genre.html?genre=Action">Action</a>
+                        <a href="./genre.html?genre=Animation">Animation</a>
+                        <a href="./genre.html?genre=Comedy">Comedy</a>
+                        <a href="./genre.html?genre=Drama">Drama</a>
+                        <a href="./genre.html?genre=Fantasy">Fantasy</a>
+                        <a href="./genre.html?genre=Horror">Horror</a>
+                    </div>
+                </li>
+                <li><a href="./add.html">Add Video</a></li>
+            </ul>
+        </div>
+      <div class="right-links">
+        <ul>
+          <li>
+            <form id="search-form">
+              <input type="text" id="search-input" placeholder="Search for a video">
+              <button type="submit">Search</button>
+            </form>
+            <div class="search-results-dropdown" id="search-results-dropdown">
+              <ul id="search-results-list"></ul>
+            </div>
+          </li>
+        </ul>
       </div>
-      <li class="tab"><a href="listdetail.html">My List</a></li>
-      <li class="tab"><a href="add.html">Add Video</a></li>
-    </ul>
-    <div class="search-container">
-      <label>
-        <form id="search-form">
-          <input type="text" id="search-input" placeholder="Search...">
-          <button type="submit">Search</button>
-        </form>
-        <div class="search-results-dropdown" id="search-results-dropdown">
-          <ul id="search-results-list"></ul>
-        </div>
-      </label>
-    </div>
-
-</header>
-<h3>Recently Added</h3>
-<section id="section">
+    </nav>
+  </header>
+  <h3>Recently Added</h3>
+  <section id="section">
   <div id='image-list-container'></div>
     <div class="image-list">
       <div class="image-list-item">
@@ -57,6 +95,21 @@
       </div>
     </div>
   </section>
+  <h3>Animation</h3>
+  <section id="animation">
+    <div id="animation-movies-container"></div>
+    <div class="image-list">
+      <div class="image-list-item">
+      </div>
+    </div>
+  </section>
+  <h3>Comedy</h3>
+  <section id="comedy">
+    <div id="comedy-movies-container"></div>
+    <div class="image-list">
+      <div class="image-list-item">
+      </div>
+    </div>
   <h3>Drama</h3>
   <section id="drama">
     <div id="drama-movies-container"></div>
@@ -64,16 +117,17 @@
       <div class="image-list-item">
       </div>
     </div>
-    <h3>Comedy</h3>
-    <section id="comedy">
-      <div id="comedy-movies-container"></div>
-      <div class="image-list">
-        <div class="image-list-item">
+      <h3>Fantasy</h3>
+      <section id="fantasy">
+        <div id="fantasy-movies-container"></div>
+        <div class="image-list">
+          <div class="image-list-item">
+          </div>
         </div>
-      </div>
-      <h3>Thriller</h3>
-      <section id="thriller">
-        <div id="thriller-movies-container"></div>
+      </section>
+      <h3>Horror</h3>
+      <section id="horror">
+        <div id="horror-movies-container"></div>
         <div class="image-list">
           <div class="image-list-item">
           </div>

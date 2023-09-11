@@ -1,0 +1,138 @@
+body {
+font-family: "Arial", sans-serif;
+margin: auto;
+background-color: #000000;
+padding: 0;
+}
+
+
+#section {
+display: flex;
+justify-content: space-between;
+}
+
+#left {
+flex: 1;
+padding: 40px;
+box-sizing: border-box;
+color: #000000;
+}
+
+h3 {
+color: #ffffff;
+}
+
+
+#right {
+flex: 1;
+padding: 40px;
+box-sizing: border-box;
+color: #ffffff;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    background-color: #730808;
+    color: #fff;
+    border: 1px solid #730808;
+    border-radius: 5px;
+}
+
+.center-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 25px;
+  }
+
+.video-reviews-container {
+    margin: 10px;
+    padding: 20px;
+}
+
+.reviews-container {
+
+    padding: 10px;
+    margin-top: 10px;
+    flex: 1;
+
+    color: #fff;
+    align-items: center;
+  }
+
+.button-wrapper {
+    display: flex; 
+    margin-top: 25px;
+    justify-content: center;
+}
+  
+
+  .review {
+    margin-bottom: 10px;
+    border: 1px solid #7f7e7e;
+    padding: 10px;
+    background-color: #210101;
+    color: #fff;
+  }
+  
+  /* Add spacing between review messages */
+  .review p {
+    margin: 0;
+    text-align: center;
+  }
+
+#add-review-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+#add-review-form textarea {
+padding: 7px;
+margin: 5px 15px 15px 15px;
+display: inline-block;
+width: 90%;
+height: 150px;
+border: 2px solid #730e0e;
+border-radius: 5px;
+background-color: #000000;
+color: #ffffff;
+resize: none;
+font-size: 12px;
+}
+
+#add-review-form h3{
+margin: 15px;
+padding: 20px;
+color: #ffffff;
+}
+
+
+
+
+
+
+#add-review-form button {
+margin: 20px;
+padding: 6px 10px;
+background-color: #730808;
+color: #fff;
+border: 1px solid #730808;
+border-radius: 5px;
+}
+
+#add-review-form button:hover {
+background-color: #cf2525;
+}
+

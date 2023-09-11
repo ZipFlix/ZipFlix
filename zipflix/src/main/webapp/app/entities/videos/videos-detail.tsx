@@ -45,6 +45,10 @@ export const VideosDetail = () => {
           </dt>
           <dd>{videosEntity.movieArtURL}</dd>
           <dt>
+            <span id="backgroundURL">Background URL</span>
+          </dt>
+          <dd>{videosEntity.backgroundURL}</dd>
+          <dt>
             <span id="videoURL">Video URL</span>
           </dt>
           <dd>{videosEntity.videoURL}</dd>

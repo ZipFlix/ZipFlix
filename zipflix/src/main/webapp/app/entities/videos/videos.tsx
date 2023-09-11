@@ -51,6 +51,7 @@ export const Videos = () => {
                 <th>Description</th>
                 <th>Release Date</th>
                 <th>Movie Art URL</th>
+                <th>Background URL</th>
                 <th>Video URL</th>
                 <th>Genre</th>
                 <th>Created By</th>
@@ -69,6 +70,7 @@ export const Videos = () => {
                   <td>{videos.description}</td>
                   <td>{videos.releaseDate}</td>
                   <td>{videos.movieArtURL}</td>
+                  <td>{videos.backgroundURL}</td>
                   <td>{videos.videoURL}</td>
                   <td>{videos.genre}</td>
                   <td>{videos.createdBy ? videos.createdBy.login : ''}</td>

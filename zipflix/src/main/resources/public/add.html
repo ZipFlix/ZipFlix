@@ -8,6 +8,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>ZipFlix</title>
     <link rel="stylesheet" href="./details.css">
+    <link rel="stylesheet" type="text/css" href="nav.css">
     <script src="./add.js" async defer></script>
 
   <style>
@@ -39,10 +40,7 @@
         .genre-dropdown-content a:hover {
             background-color: #000000;
         }
-        body
-        {
-          background: #730808;
-        }
+
     </style>
 </head>
 
@@ -50,9 +48,11 @@
     <header>
         <nav>
             <div class="left-links">
+                <ul><li id="logo">ZipFlix</li></ul>
+            </div>
+            <div class="middle-links">
                 <ul>
-                    <li id="logo">ZipFlix</li>
-                    <li><a href="videolist.html">Home</a></li>
+                    <li><a href="./videolist.html">Home</a></li>
                     <li class="genre-dropdown">
                         <a href="#" id="genre-dropdown-trigger">Genre</a>
                         <div class="genre-dropdown-content" id="genreDropdown">
@@ -64,7 +64,6 @@
                             <a href="./genre.html?genre=Horror">Horror</a>
                         </div>
                     </li>
-                    <li><a href="./listdetail.html">My List</a></li>
                     <li><a href="./add.html">Add Video</a></li>
                 </ul>
             </div>
@@ -97,9 +96,12 @@
             <input type="text" id="description" name="description" placeholder="Description..."><br>
             <label for="movieArtFile">Upload Image:</label>
             <input type="file" id="movieArtFile" name="movieArtFile" accept="image/*" >
+            <label for="movieBackFile">Upload Background Image:</label>
+            <input type="file" id="movieBackFile" name="movieArtFile" accept="image/*" >
             <label for="videoFile">Upload Video:</label>
             <input type="file" id="videoFile" name="videoFile">
             <button type="submit" onclick="doPostOfForm()">Add Video</button>
+            <textarea id="console-output" rows="4" cols="50" readonly></textarea>
         </form>
     </section>
     <script>

@@ -6,9 +6,11 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>ZipFlix</title>
-    <link rel="stylesheet" href="details.css">
+    <!-- <link rel="stylesheet" href="./details.css"> -->
+    <link rel="stylesheet" href="./review.css">
     <link rel="stylesheet" type="text/css" href="nav.css">
-    <script src="./genre.js" async defer></script>
+    <script src="./review.js" async defer></script>
+
 
     <style>
         /* dropdown menu */
@@ -41,7 +43,6 @@
         }
     </style>
 </head>
-
 <body>
     <header>
         <nav>
@@ -65,26 +66,41 @@
                     <li><a href="./add.html">Add Video</a></li>
                 </ul>
             </div>
-            <div class="right-links">
-                <ul>
-                    <li>
-                        <form id="search-form">
-                            <input type="text" id="search-input" placeholder="Search for a video">
-                            <button type="submit">Search</button>
-                            <div class="search-results-dropdown" id="search-results-dropdown">
-                            <ul id="search-results-list"></ul>
-                        </form>
-                    </li>
-                </ul>
-            </div>
+          <div class="right-links">
+            <ul>
+              <li>
+                <form id="search-form">
+                  <input type="text" id="search-input" placeholder="Search for a video">
+                  <button type="submit">Search</button>
+                </form>
+                <div class="search-results-dropdown" id="search-results-dropdown">
+                  <ul id="search-results-list"></ul>
+                </div>
+              </li>
+            </ul>
+          </div>
         </nav>
     </header>
     <section id="section">
-        <div id='posts'></div>
+        <div id='left'>
+            <h3>Add a Review</h3>
+            <form id='add-review-form'>
+                <div class="review-form-container">
+                    <label for='review-message'>Review Message:</label>
+                    <textarea id='review-message' name='review-message' required></textarea>
+                    <button type='submit'>Add Review</button>
+                </div>
+            </form>
+        </div>
+        <div id="right">
+            <div id='post'></div>
+        </div>
+
     </section>
+    
 
     <script>
-        //handle the dropdown menu
+        // JavaScript to handle the dropdown menu
         const genreDropdownTrigger = document.getElementById("genre-dropdown-trigger");
         const genreDropdown = document.getElementById("genreDropdown");
 

@@ -1,11 +1,11 @@
 body {
   background-color: black;
   color: white;
-  margin: 0;
+  margin: auto;
   padding: 0;
   font-family: "Arial", sans-serif;
 }
-header {
+/* header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,14 +23,14 @@ header {
 header {
   color: #800000;
   background-color: black;
-}
+} */
 h3 {
   color: white;
   padding: 10px;
   margin-left: 10px;
   margin-bottom: -5px;
 }
-.tabs {
+/* .tabs {
   display: flex;
   list-style-type: none;
   padding: 0;
@@ -47,20 +47,13 @@ h3 {
 
 .tab a:hover {
   text-decoration: underline;
-}
-.search-container {
+} */
+/* .search-container {
   display: flex;
   align-items: center;
 
-}
-.search-form {
-  width: 200px;
-  padding: 5px;
-  border: none;
-  border-radius: 4px;
-  background-color: black;
-  color: #800000;
-}
+} */
+
 #image-list-container {
   display: flex;
   flex-direction: row;
@@ -132,7 +125,7 @@ h3 {
 /*  transform: translateY(-10px);*/
 /*}*/
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -188,13 +181,13 @@ h3 {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
+} */
 
 
 
 /*///////////Search Bar///////*/
 
-.search-container input{
+/* .search-container input{
   background-color: transparent;
   color: #efeeee;
 }
@@ -209,12 +202,12 @@ h3 {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   cursor: pointer;
-}
+} */
 
 .search-results-dropdown {
   display: block;
   position: absolute;
-  background-color: black;
+  background-color: #000000;
   color: #0c0c0c;
   border: 1px solid #000000;
   max-height: 150px;
@@ -223,7 +216,7 @@ h3 {
   right:0
 }
 .search-results-dropdown input[type="text"] {
-  color: #0c0c0c;
+  color: #d2c7c7;
   border: none;
   padding: 5px;
   width: 100%;
@@ -241,7 +234,7 @@ h3 {
   padding: 10px;
   border-bottom: 1px solid #050505;
   transition: background-color 0.2s;
-  color: #0c0c0c;
+  color: #000000;
   width: 300px;
   display: flex;
 }
@@ -268,7 +261,7 @@ h3 {
 
 #search-results-list li {
   padding: 10px;
-  color: black;
+  color: #ffffff;
 }
 #search-results-list li a {
   color: #efeeee;
@@ -288,6 +281,7 @@ h3 {
   font-size: 16px;
   padding-top: 25px;
 }
+
 
 
 /*//////Genre theme//////*/

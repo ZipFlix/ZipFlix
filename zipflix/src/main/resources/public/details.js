@@ -1,18 +1,20 @@
 const API_URL = `http://localhost:8080`
 
-function fetchVideosData() {
-    fetch(`${API_URL}/api/videos`)
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            showVideoList(data)
-        })
-        .catch((error) => {
-            console.log(`Error Fetching Data: ${error}`)
-            document.getElementById('posts').innerHTML = 'Error Loading Videos'
-        })
+function fetchVideo(videoid) {
+  fetch(`${API_URL}/api/videos/${videoid}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      // Check if the data contains a valid backgroundURL property
+      showVideoDetail(data);
+    })
+    .catch((error) => {
+      console.log(`Error Fetching data : ${error}`)
+      document.getElementById('post').innerHTML = 'Error Loading Single Video Data'
+    })
 }
+
 
 function fetchVideo(videoid) {
     fetch(`${API_URL}/api/videos/${videoid}`)
@@ -20,6 +22,10 @@ function fetchVideo(videoid) {
             return res.json();
         })
         .then((data) => {
+          const backgroundUR = data.backgroundURL;
+          console.log(backgroundUR);
+          // Pass the backgroundURL to setBodyBackground
+          setBodyBackground(backgroundUR);
             showVideoDetail(data)
         })
         .catch((error) => {
@@ -44,8 +50,6 @@ function showVideoList(data) {
 
     ul.appendChild(list);
 }
-
-
 
 function showVideoDetail(post) {
   const element = document.getElementById('post');
@@ -101,9 +105,26 @@ function showVideoDetail(post) {
     reviewsContainer.appendChild(reviewElement);
   });
 
+
+  const reviewButton = document.createElement('button');
+      reviewButton.textContent = 'Write a Review';
+      reviewButton.classList.add('review-button');
+
+      reviewButton.addEventListener('click', () => {
+          window.location.href = `/review.html?videoid=${post.id}`;
+      });
+    
+      const buttonWrapper = document.createElement('div'); 
+      buttonWrapper.classList.add('button-wrapper'); 
+      buttonWrapper.appendChild(reviewButton); 
+  
+      reviewsContainer.appendChild(buttonWrapper);
+  
+
   // Append the reviewsContainer to the leftContainer
   leftContainer.appendChild(RecentReviewHeading);
   leftContainer.appendChild(reviewsContainer);
+
 
   // Create the right side container
   const rightContainer = document.createElement('div');
@@ -114,10 +135,32 @@ function showVideoDetail(post) {
   image.src = post.movieArtURL;
   image.alt = `${post.title} Image`;
   rightContainer.appendChild(image);
-
   const imageLink = document.createElement('a');
   imageLink.href = post.videoURL;
+  imageLink.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent the default link behavior
+
+    // Set the modal's display property to block
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'block';
+
+    // Optionally, you can set the video source here based on your use case
+    const videoPlayer = document.getElementById('videoPlayer');
+    const sourceElement = videoPlayer.querySelector('source');
+    sourceElement.src = post.videoURL;
+    videoPlayer.load();
+    videoPlayer.play();
+  });
+  const closeModalButton = document.getElementById('closeModal');
+  closeModalButton.addEventListener('click', function () {
+    // Set the modal's display property to none to hide it
+    const modal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.pause();
+    modal.style.display = 'none';
+  });
   imageLink.appendChild(image);
+
 
   rightContainer.appendChild(imageLink);
 
@@ -125,6 +168,7 @@ function showVideoDetail(post) {
   container.appendChild(rightContainer);
   element.appendChild(container);
 }
+
 function parseVideoId() {
     try {
         var url_string = (window.location.href).toLowerCase();
@@ -136,19 +180,21 @@ function parseVideoId() {
         return "0"
       }
 }
-function handlePages() {
-    let videoid = parseVideoId()
-    console.log("videoId: ",videoid)
 
-    if (videoid != null) {
-        console.log("found a videoId")
-        fetchVideo(videoid)
-    } else {
-        console.log("load all videos")
-        fetchVideosData()
-    }
+function handlePages() {
+  let videoid = parseVideoId();
+  console.log("videoId: ", videoid);
+
+  if (videoid != null) {
+      console.log("found a videoId");
+      fetchVideo(videoid);
+  } else {
+      console.log("load all videos");
+      fetchVideosData();
+  }
 }
 handlePages();
+
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results-dropdown');
@@ -228,7 +274,6 @@ function displaySearchResults(results) {
     });
   }
 }
-
 // Close the dropdown menu when clicking outside of it
 document.addEventListener('click', (e) => {
   if (!searchResults.contains(e.target)) {
@@ -240,22 +285,49 @@ function hasVideoIdParam() {
   return urlParams.has('videoid');
 }
 
-// Function to set the background image or color based on the presence of videoid
-function setBodyBackground() {
-  const body = document.body;
 
-  if (hasVideoIdParam()) {
+
+// Function to set the background image or color based on the presence of videoid
+
+function setBodyBackground(backgroundURL) {
+  const body = document.body;
+  if (backgroundURL) {
     console.log('Setting Background Image');
-    body.style.backgroundImage = 'url("Images/desktop-wallpaper-fonds-d-ecran-avatar-2-tous-les-avatar-2-background.jpg")';
-    body.style.backgroundColor = 'transparent';
-    body.style.backgroundSize = 'cover';// Remove the background color
+    const backgroundImage = new Image(); // Create a new image element
+
+    // Set up an onload event handler for the image
+    backgroundImage.onload = function() {
+      console.log('Background Image Loaded');
+      body.style.backgroundImage = `url("${backgroundURL}")`;
+      body.style.backgroundColor = 'transparent';
+      body.style.backgroundSize = 'cover'; // Set the background image
+      // Now that the image is loaded, you can display the page content
+      document.getElementById('pageContent').style.display = 'block';
+    };
+
+    // Set up an onerror event handler for the image in case it fails to load
+    backgroundImage.onerror = function() {
+      console.error('Error loading background image');
+      body.style.backgroundColor = '#000000'; // Set the background color
+      // Now that the image loading has been attempted, you can display the page content
+      document.getElementById('pageContent').style.display = 'block';
+    };
+
+    backgroundImage.src = backgroundURL; // Set the image source to start loading
   } else {
     console.log('Setting color');
-    body.style.background = 'none';
-    body.style.backgroundColor = '#730808';
-   // Remove the background image
+    body.style.backgroundImage = 'none';
+    body.style.backgroundColor = '#000000'; // Set the background color
+    // Since there's no image to load, you can display the page content immediately
+    document.getElementById('pageContent').style.display = 'block';
   }
 }
+
+
+
+
+
+
 
 // Call the function when the page loads
 window.addEventListener('load', setBodyBackground);
