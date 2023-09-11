@@ -113,13 +113,13 @@ function showVideoDetail(post) {
       reviewButton.addEventListener('click', () => {
           window.location.href = `/review.html?videoid=${post.id}`;
       });
-    
-      const buttonWrapper = document.createElement('div'); 
-      buttonWrapper.classList.add('button-wrapper'); 
-      buttonWrapper.appendChild(reviewButton); 
-  
+
+      const buttonWrapper = document.createElement('div');
+      buttonWrapper.classList.add('button-wrapper');
+      buttonWrapper.appendChild(reviewButton);
+
       reviewsContainer.appendChild(buttonWrapper);
-  
+
 
   // Append the reviewsContainer to the leftContainer
   leftContainer.appendChild(RecentReviewHeading);
@@ -291,38 +291,35 @@ function hasVideoIdParam() {
 
 function setBodyBackground(backgroundURL) {
   const body = document.body;
-  if (backgroundURL) {
-    console.log('Setting Background Image');
-    const backgroundImage = new Image(); // Create a new image element
+  const htmlelement = document.documentElement;
 
-    // Set up an onload event handler for the image
-    backgroundImage.onload = function() {
-      console.log('Background Image Loaded');
-      body.style.backgroundImage = `url("${backgroundURL}")`;
-      body.style.backgroundColor = 'transparent';
-      body.style.backgroundSize = 'cover'; // Set the background image
-      // Now that the image is loaded, you can display the page content
-      document.getElementById('pageContent').style.display = 'block';
-    };
+  // Create a new image element
+  const backgroundImage = new Image();
 
-    // Set up an onerror event handler for the image in case it fails to load
-    backgroundImage.onerror = function() {
-      console.error('Error loading background image');
-      body.style.backgroundColor = '#000000'; // Set the background color
-      // Now that the image loading has been attempted, you can display the page content
-      document.getElementById('pageContent').style.display = 'block';
-    };
+  // Set up an onload event handler for the image
+  backgroundImage.onload = function() {
+    console.log('Background Image Loaded');
+    body.style.backgroundImage = `url("${backgroundURL}")`;
+    body.style.backgroundColor = 'transparent';
+    body.style.backgroundSize = '100% 100%';
+    body.style.backgroundRepeat = 'no-repeat';
+    htmlelement.style.backgroundColor = 'black';
 
-    backgroundImage.src = backgroundURL; // Set the image source to start loading
-  } else {
-    console.log('Setting color');
-    body.style.backgroundImage = 'none';
-    body.style.backgroundColor = '#000000'; // Set the background color
-    // Since there's no image to load, you can display the page content immediately
+
+
+
+    // Now that the image is loaded and the black background is added, you can display the page content
     document.getElementById('pageContent').style.display = 'block';
-  }
-}
+  };
+  backgroundImage.onerror = function() {
+    console.error('Error loading background image');
+    body.style.backgroundColor = '#000000'; // Set the background color
 
+    document.getElementById('pageContent').style.display = 'block';
+  };
+
+  backgroundImage.src = backgroundURL;
+}
 
 
 

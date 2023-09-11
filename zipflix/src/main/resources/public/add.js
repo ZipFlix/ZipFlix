@@ -3,10 +3,10 @@ const API_URL = `http://localhost:8080`
 
 function doPostOfForm(event) {
   event.preventDefault(); // Prevent default form submission
-
+  const console = document.getElementById('console-output');
   const form = document.getElementById("add-video-form");
   const formData = new FormData(form);
-
+  console.style.display = 'inline-block';
   var object = {};
   formData.forEach(function (value, key) {
     object[key] = value;
