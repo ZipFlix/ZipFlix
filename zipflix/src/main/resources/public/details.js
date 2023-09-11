@@ -301,7 +301,7 @@ function setBodyBackground(backgroundURL) {
     console.log('Background Image Loaded');
     body.style.backgroundImage = `url("${backgroundURL}")`;
     body.style.backgroundColor = 'transparent';
-    body.style.backgroundSize = '100% 100%';
+    body.style.backgroundSize = 'cover';
     body.style.backgroundRepeat = 'no-repeat';
     htmlelement.style.backgroundColor = 'black';
 
