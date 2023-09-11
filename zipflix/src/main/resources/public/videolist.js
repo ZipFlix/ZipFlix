@@ -10,7 +10,9 @@ function fetchVideosData() {
       showActionMovies(data)
       showDramaMovies(data)
       showComedyMovies(data)
-      showThrillerMovies(data)
+      showHorrorMovies(data)
+      showAnimationMovies(data)
+      showFantasyMovies(data)
     })
     .catch((error) => {
       console.log(`Error Fetching Data: ${error}`)
@@ -158,13 +160,71 @@ function showComedyMovies(data) {
   container.appendChild(list);
 }
 
-function showThrillerMovies(data) {
-  const container = document.getElementById('thriller-movies-container'); // Container for drama movies
+function showHorrorMovies(data) {
+  const container = document.getElementById('horror-movies-container'); // Container for drama movies
   const list = document.createDocumentFragment();
 
   // Filter movies by the "drama" genre
-  const thrillerMovies = data.filter(post => post.genre === 'Horror');
-  thrillerMovies.forEach(function(post) {
+  const horrorMovies = data.filter(post => post.genre === 'Horror');
+  horrorMovies.forEach(function(post) {
+    console.log("Video:", post);
+
+    const movieContainer = document.createElement('div');
+    movieContainer.classList.add('image-list-item');
+
+    const link = document.createElement('a');
+    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
+
+    const image = document.createElement('img');
+    image.src = post.movieArtURL;
+    image.alt = post.title;
+    image.className = 'image-item';
+
+    link.appendChild(image);
+    movieContainer.appendChild(link);
+
+    list.appendChild(movieContainer);
+  });
+
+  container.appendChild(list);
+}
+
+function showAnimationMovies(data) {
+  const container = document.getElementById('animation-movies-container'); // Container for drama movies
+  const list = document.createDocumentFragment();
+
+  // Filter movies by the "drama" genre
+  const animationMovies = data.filter(post => post.genre === 'Animation');
+  animationMovies.forEach(function(post) {
+    console.log("Video:", post);
+
+    const movieContainer = document.createElement('div');
+    movieContainer.classList.add('image-list-item');
+
+    const link = document.createElement('a');
+    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
+
+    const image = document.createElement('img');
+    image.src = post.movieArtURL;
+    image.alt = post.title;
+    image.className = 'image-item';
+
+    link.appendChild(image);
+    movieContainer.appendChild(link);
+
+    list.appendChild(movieContainer);
+  });
+
+  container.appendChild(list);
+}
+
+function showFantasyMovies(data) {
+  const container = document.getElementById('fantasy-movies-container'); // Container for drama movies
+  const list = document.createDocumentFragment();
+
+  // Filter movies by the "drama" genre
+  const fantasyMovies = data.filter(post => post.genre === 'Fantasy');
+  fantasyMovies.forEach(function(post) {
     console.log("Video:", post);
 
     const movieContainer = document.createElement('div');
