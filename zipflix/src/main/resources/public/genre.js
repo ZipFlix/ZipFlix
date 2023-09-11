@@ -137,8 +137,8 @@ function showVideoList(data) {
         videoContainer.appendChild(link);
         currentRow.appendChild(videoContainer);
 
-        // Check if we've reached 5 videos or it's the last video in the list
-        if ((index + 1) % 5 === 0 || index === data.length - 1) {
+        // Check if we've reached 8 videos or it's the last video in the list
+        if ((index + 1) % 8 === 0 || index === data.length - 1) {
             ul.appendChild(currentRow); // Append the current row to the main container
             currentRow = document.createElement('div'); // Start a new row
         }
