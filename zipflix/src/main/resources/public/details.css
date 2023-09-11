@@ -30,7 +30,7 @@ h4, p {
 h1 {
   color: #fff;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 
@@ -40,7 +40,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px 20px 20px;
+  padding: 5px 20px 20px 20px;
 }
 
 
@@ -61,12 +61,19 @@ h1 {
   width: 50%;
 }
 
-#add-review-form,
-#add-video-form {
+#add-review-form
+ {
   text-align: center;
   padding: 20px;
   border-radius: 5px;
   max-width: 400px;
+}
+#add-video-form
+{
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  width: 550px;
 }
 
 #add-review-form input,
@@ -89,7 +96,7 @@ h1 {
 
 textarea {
   margin: 15px;
-  background-color: #730808;
+  background-color: #500505;
   color: #000000;
   border: 2px solid #000000;
   resize: none;
@@ -107,14 +114,53 @@ textarea {
   border-radius: 3px;
 }
 
+/* Update the label styles for the add video form */
 #add-video-form label {
   margin-right: 10px;
   color: #ffffff;
   display: inline-block;
   text-align: left;
-  width: 150px;
-  font-size: 16px;
+  width: 250px;
+  font-size: 28px; /* Adjust the font size to make the labels larger */
   font-weight: lighter;
+}
+
+/* Adjust spacing between label and input elements */
+#add-video-form input {
+  padding: 7px;
+  margin: 5px 15px 15px 15px;
+  display: inline-block;
+  width: 180px;
+  border: 1px solid #730e0e;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Adjust spacing between label and textarea */
+#add-video-form textarea {
+  margin: 15px;
+  background-color: #500505;
+  color: #000000;
+  border: 2px solid #000000;
+  resize: none;
+  padding: 5px;
+  font-size: 16px; /* Adjust the font size for the textarea */
+}
+
+/* Adjust button styles */
+#add-video-form button {
+  margin: 20px;
+  padding: 12px 20px;
+  background-color: #730808;
+  color: #fff;
+  border: 1px solid #730808;
+  border-radius: 5px;
+  font-size: 18px; /* Adjust the font size for the button */
+}
+
+#add-video-form button:hover {
+  background-color: #cf2525;
 }
 
 #add-review-form button,
@@ -221,7 +267,7 @@ textarea {
 }
 
 .button-wrapper {
-  display: flex; 
+  display: flex;
   margin-top: 25px;
   justify-content: center;
 }
@@ -335,6 +381,8 @@ textarea {
 #console-output {
   color: white; /* Change to your desired text color */
 }
-#console-output {
-  font-size: 16px; /* Change to your desired font size */
+#console-output
+{
+  font-size: 16px;
+  display: none;/* Change to your desired font size */
 }
