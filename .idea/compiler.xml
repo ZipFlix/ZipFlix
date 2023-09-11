@@ -32,5 +32,8 @@
         <module name="zipflix" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="zipflix" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
