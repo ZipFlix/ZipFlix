@@ -210,13 +210,14 @@ textarea {
 }
 
 .resized-image {
-  width: auto;
+  width: 425px;
   height: 550px;
 }
 
 .image-thumbnail {
-  max-width: 250px;
-  max-height: auto;
+  width: 200px;
+  height: 300px;
+  border-radius: 5px;
 }
 
 .video-container {
@@ -232,11 +233,11 @@ textarea {
   clear: both;
 }
 .reviews-container {
-  background-color: #000000;
+
   padding: 10px;
   margin-top: 10px;
   flex: 1;
-  background-color: rgba(0, 0, 0, 0.7); /* Adjust the last value (alpha) to control transparency */
+
   color: #fff;
 }
 
@@ -244,7 +245,7 @@ textarea {
 /* Style individual review elements */
 .review {
   margin-bottom: 10px;
-  border: 1px solid #333;
+  border: 1px solid #7f7e7e;
   padding: 10px;
   background-color: #210101;
   color: #fff;
