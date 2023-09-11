@@ -83,6 +83,21 @@
         </nav>
     </header>
     <h1>Add a New Video</h1>
+    <textarea id="console-output" rows="4" cols="50" readonly></textarea>
+    <style>
+      /* Add these CSS rules to style the console-output textarea */
+      #console-output {
+        width: 300px; /* Adjust the width as needed */
+        height: 200px; /* Adjust the height as needed */
+        position: absolute;
+        top: 50%;
+        right: 75px;
+        transform: translateY(-50%);
+      }
+
+      /* Other CSS rules */
+      /* ... (existing CSS rules) ... */
+    </style>
     <section id="form-container">
         <div id='post'></div>
         <form id="add-video-form">
@@ -101,7 +116,6 @@
             <label for="videoFile">Upload Video:</label>
             <input type="file" id="videoFile" name="videoFile">
             <button type="submit" onclick="doPostOfForm()">Add Video</button>
-            <textarea id="console-output" rows="4" cols="50" readonly></textarea>
         </form>
     </section>
     <script>
