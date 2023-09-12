@@ -15,7 +15,7 @@ nav {
 }
 
 .middle-links a {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .left-links ul,
@@ -62,12 +62,12 @@ nav ul li a:hover {
 
 #search-input {
   padding: 10px;
-  width: 120px;
+  width: 180px;
   border: 1px solid #ffffff;
   border-radius: 5px;
   background-color: #000000;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 20px;
 }
 
 #search-form button {
@@ -76,7 +76,7 @@ nav ul li a:hover {
   color: #fff;
   border: none;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 #search-form button:hover {

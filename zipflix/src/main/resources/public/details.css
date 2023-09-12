@@ -203,20 +203,20 @@ textarea {
 
 .text-container {
   flex: 1;
-  margin-right: 20px;
+  margin-right: 21px;
   color: #fff;
   text-align: center;
 }
 
 .text-container p {
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .genre-release-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 21px;
 }
 
 .image-container {
@@ -243,7 +243,7 @@ textarea {
   box-sizing: border-box;
   /* padding: 10px 0px 10px 0px; */
   text-align: center;
-  margin: 6px;
+  margin-right: 6px;
 }
 
 .video-row {
@@ -274,7 +274,7 @@ textarea {
 /* Add spacing between review messages */
 .review p {
   margin: 0;
-  font-size: 18px;
+  font-size: 21px;
   font-style: italic;
 }
 
@@ -282,7 +282,7 @@ textarea {
   display: flex;
   align-items: center;
   padding: 6px 10px;
-  font-size: 15px;
+  font-size: 19px;
   background-color: #730808;
   color: #fff;
   border: 1px solid #730808;
