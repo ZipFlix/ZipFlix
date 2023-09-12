@@ -2,7 +2,7 @@ const windowURL = window.location.href;
 var urlParts = windowURL.split('/');
 var desiredPortion = urlParts[2];
 console.log(desiredPortion);
-const API_URL ="http://"+desiredPortion;
+const API_URL ="https://"+desiredPortion;
 function fetchVideo(videoid) {
   fetch(`${API_URL}/api/videos/${videoid}`)
     .then((res) => {
