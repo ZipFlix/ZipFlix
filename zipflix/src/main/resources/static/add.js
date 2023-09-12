@@ -3,7 +3,7 @@ const windowURL = window.location.href;
 var urlParts = windowURL.split('/');
 var desiredPortion = urlParts[2];
 console.log(desiredPortion);
-const API_URL ="http://"+desiredPortion;
+const API_URL ="https://"+desiredPortion;
 
 function doPostOfForm(event) {
   event.preventDefault(); // Prevent default form submission
