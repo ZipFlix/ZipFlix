@@ -23,6 +23,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/main/webapp/app"],
+  "include": ["src/main/webapp/app","zipflix/src/main/resources/public/*.js"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.spec.tsx"]
 }

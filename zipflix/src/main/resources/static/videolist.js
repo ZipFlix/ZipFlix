@@ -1,4 +1,8 @@
-const API_URL = `http://localhost:8080`
+const windowURL = window.location.href;
+var urlParts = windowURL.split('/');
+var desiredPortion = urlParts[2];
+console.log(desiredPortion);
+const API_URL ="http://"+desiredPortion;
 
 function fetchVideosData() {
   fetch(`${API_URL}/api/videos`)
@@ -50,7 +54,7 @@ function showVideoList(data) {
     imageContainer.classList.add('image-list-item');
 
     const link = document.createElement('a');
-    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
+    link.href = `${API_URL}/details.html?videoid=${post.id}`;
 
     const image = document.createElement('img');
     image.src = post.movieArtURL;
@@ -86,7 +90,7 @@ function showVideoList(data) {
     movieContainer.classList.add('image-list-item');
 
     const link = document.createElement('a');
-    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
+    link.href = `${API_URL}/details.html?videoid=${post.id}`;
 
     const image = document.createElement('img');
     image.src = post.movieArtURL;
@@ -115,7 +119,7 @@ function showDramaMovies(data) {
     movieContainer.classList.add('image-list-item');
 
     const link = document.createElement('a');
-    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
+    link.href = `${API_URL}/details.html?videoid=${post.id}`;
 
     const image = document.createElement('img');
     image.src = post.movieArtURL;
@@ -144,7 +148,7 @@ function showComedyMovies(data) {
     movieContainer.classList.add('image-list-item');
 
     const link = document.createElement('a');
-    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
+    link.href = `${API_URL}/details.html?videoid=${post.id}`;
 
     const image = document.createElement('img');
     image.src = post.movieArtURL;
@@ -173,7 +177,7 @@ function showHorrorMovies(data) {
     movieContainer.classList.add('image-list-item');
 
     const link = document.createElement('a');
-    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
+    link.href = `${API_URL}/details.html?videoid=${post.id}`;
 
     const image = document.createElement('img');
     image.src = post.movieArtURL;
@@ -202,7 +206,7 @@ function showAnimationMovies(data) {
     movieContainer.classList.add('image-list-item');
 
     const link = document.createElement('a');
-    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
+    link.href = `${API_URL}/details.html?videoid=${post.id}`;
 
     const image = document.createElement('img');
     image.src = post.movieArtURL;
@@ -231,7 +235,7 @@ function showFantasyMovies(data) {
     movieContainer.classList.add('image-list-item');
 
     const link = document.createElement('a');
-    link.href = `http://localhost:8080/details.html?videoid=${post.id}`;
+    link.href = `${API_URL}/details.html?videoid=${post.id}`;
 
     const image = document.createElement('img');
     image.src = post.movieArtURL;
