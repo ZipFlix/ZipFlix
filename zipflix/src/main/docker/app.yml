@@ -26,3 +26,4 @@ services:
     # remove the "127.0.0.1:" prefix
     ports:
       - 127.0.0.1:5442:5442
+    command: -p 5442
