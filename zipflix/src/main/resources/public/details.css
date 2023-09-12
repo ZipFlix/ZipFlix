@@ -3,7 +3,7 @@ body {
   margin: auto;
   background-color: #000000;
   padding: 0;
-
+  overflow: hidden;
 }
 
 h4, p {
