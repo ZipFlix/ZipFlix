@@ -33,7 +33,7 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/zipflix
+    url: jdbc:postgresql://localhost:5442/zipflix
     username: zipflix
     password:
     hikari:
