@@ -18,8 +18,7 @@ logging:
     ROOT: INFO
     tech.jhipster: INFO
     dev.zipcode.zipflix: INFO
-  file:
-    name: '/var/log/Ricky.log'
+
 
 management:
   metrics:
@@ -121,6 +120,9 @@ jhipster:
   mail: # specific JHipster mail property, for standard properties see MailProperties
     base-url: http://my-server-url-to-change # Modify according to your server's URL
   logging:
+    path:
+      file:
+        name: '/tmp/ricky.log'
     use-json-format: false # By default, logs are not in Json format
     logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
       enabled: false
