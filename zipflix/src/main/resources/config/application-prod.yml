@@ -18,7 +18,8 @@ logging:
     ROOT: INFO
     tech.jhipster: INFO
     dev.zipcode.zipflix: INFO
-
+    file:
+      path=logs:
 management:
   metrics:
     export:
