@@ -121,7 +121,7 @@ jhipster:
     base-url: http://my-server-url-to-change # Modify according to your server's URL
   logging:
     file:
-      name: '/tmp/ricky.log'
+      path: '/tmp/'
     use-json-format: false # By default, logs are not in Json format
     logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
       enabled: false
