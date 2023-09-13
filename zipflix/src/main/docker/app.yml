@@ -22,6 +22,7 @@ services:
       - POSTGRES_USER=zipflix
       - POSTGRES_PASSWORD=
       - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_PORT=5442
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:
