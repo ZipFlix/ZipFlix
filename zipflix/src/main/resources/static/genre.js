@@ -1,4 +1,8 @@
-const API_URL = `http://localhost:8080`;
+const windowURL = window.location.href;
+var urlParts = windowURL.split('/');
+var desiredPortion = urlParts[2];
+console.log(desiredPortion);
+const API_URL ="https://"+desiredPortion;
 
 function fetchVideosData() {
     fetch(`${API_URL}/api/videos`)

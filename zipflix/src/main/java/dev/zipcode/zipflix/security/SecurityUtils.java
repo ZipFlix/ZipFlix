@@ -83,7 +83,6 @@ public final class SecurityUtils {
     public static boolean hasCurrentUserNoneOfAuthorities(String... authorities) {
         return !hasCurrentUserAnyOfAuthorities(authorities);
     }
-
     /**
      * Checks if the current user has a specific authority.
      *

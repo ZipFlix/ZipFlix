@@ -1,5 +1,8 @@
-const API_URL = `http://localhost:8080`
-
+const windowURL = window.location.href;
+var urlParts = windowURL.split('/');
+var desiredPortion = urlParts[2];
+console.log(desiredPortion);
+const API_URL ="https://"+desiredPortion;
 async function fetchVideo(videoid) {
     try {
         const res = await fetch(`${API_URL}/api/videos/${videoid}`);
@@ -15,7 +18,7 @@ async function fetchVideo(videoid) {
 function showVideoReviews(post) {
     const element = document.getElementById('post');
     element.innerHTML = ''; // Clear any existing content
-  
+
     // Create a container for the video details
     const container = document.createElement('div');
     container.classList.add('video-reviews-container');
@@ -29,10 +32,10 @@ function showVideoReviews(post) {
     post.reviews.forEach((review) => {
         const reviewElement = document.createElement('div');
         reviewElement.classList.add('review');
-    
+
         const reviewMessage = document.createElement('p');
         reviewMessage.innerHTML = review.message;
-    
+
         reviewElement.appendChild(reviewMessage);
         reviewsContainer.appendChild(reviewElement);
       });
@@ -44,11 +47,11 @@ function showVideoReviews(post) {
       backButton.addEventListener('click', () => {
           window.location.href = `/details.html?videoid=${post.id}`;
       });
-    
-      const buttonWrapper = document.createElement('div'); 
-      buttonWrapper.classList.add('button-wrapper'); 
-      buttonWrapper.appendChild(backButton); 
-  
+
+      const buttonWrapper = document.createElement('div');
+      buttonWrapper.classList.add('button-wrapper');
+      buttonWrapper.appendChild(backButton);
+
 
     container.appendChild(reviewsHeader);
     container.appendChild(reviewsContainer);
@@ -163,6 +166,6 @@ function handlePages() {
   if (videoid != null) {
       console.log("found a videoId");
       fetchVideo(videoid);
-  } 
+  }
 }
 handlePages();

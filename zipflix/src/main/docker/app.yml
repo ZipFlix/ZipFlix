@@ -7,13 +7,13 @@ services:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,api-docs
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://zipflix-postgresql:5432/zipflix
-      - SPRING_LIQUIBASE_URL=jdbc:postgresql://zipflix-postgresql:5432/zipflix
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://zipflix-postgresql:5442/zipflix
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://zipflix-postgresql:5442/zipflix
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:
-      - 127.0.0.1:8080:8080
+      - 127.0.0.1:8090:8080
   zipflix-postgresql:
     image: postgres:14.5
     # volumes:
@@ -22,7 +22,9 @@ services:
       - POSTGRES_USER=zipflix
       - POSTGRES_PASSWORD=
       - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_PORT=5442
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:
-      - 127.0.0.1:5432:5432
+      - 127.0.0.1:5442:5442
+    command: -p 5442

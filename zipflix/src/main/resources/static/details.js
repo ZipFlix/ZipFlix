@@ -1,5 +1,8 @@
-const API_URL = `http://localhost:8080`
-
+const windowURL = window.location.href;
+var urlParts = windowURL.split('/');
+var desiredPortion = urlParts[2];
+console.log(desiredPortion);
+const API_URL ="https://"+desiredPortion;
 function fetchVideo(videoid) {
   fetch(`${API_URL}/api/videos/${videoid}`)
     .then((res) => {
@@ -42,7 +45,7 @@ function showVideoList(data) {
         console.log("Video:", post);
         let li = document.createElement('li');
         let title = document.createElement('h3');
-        title.innerHTML = `<a href="http://localhost:8080/details.html?videoid=${post.id}">${post.title}</a>`;
+        title.innerHTML = `<a href="{API_URL}/details.html?videoid=${post.id}">${post.title}</a>`;
 
         li.appendChild(title);
         list.appendChild(li);
