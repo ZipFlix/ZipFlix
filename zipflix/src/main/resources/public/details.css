@@ -6,6 +6,7 @@ body {
 
 }
 
+
 h4, p {
   color: #fff;
   margin: 15px;
@@ -221,7 +222,7 @@ textarea {
 }
 
 .button-wrapper {
-  display: flex; 
+  display: flex;
   margin-top: 25px;
   justify-content: center;
 }
