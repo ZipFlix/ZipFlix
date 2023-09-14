@@ -138,11 +138,12 @@ textarea {
   padding: 7px;
   margin: 5px 15px 15px 15px;
   display: inline-block;
-  width: 180px;
+  width: 240px;
   border: 1px solid #730e0e;
   border-radius: 5px;
   background-color: #000000;
   color: #ffffff;
+  font-size: 21px;
 }
 
 /* Adjust spacing between label and textarea */
@@ -301,62 +302,65 @@ textarea {
 
 /* Dropdown menu styles */
 /* Dropdown menu styles */
-.search-results-dropdown {
+#search-results-dropdown {
   display: block;
   position: absolute;
   background-color: #000000;
   border: 1px solid #000000;
   max-height: 150px;
   overflow-y: auto;
+  overflow-x: hidden;
   z-index: 1;
-  right:0
-}
-
-#search-results-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-#search-results-list li {
+  right: 0;
+  /* Increase the width and add padding to make it bigger */
+  width: 350px;
   padding: 10px;
+}
+
+/* Increase the size of each search result item */
+#search-results-list li {
+  padding: 15px; /* Increase padding for better spacing */
   border-bottom: 1px solid #ddd;
   transition: background-color 0.2s;
-  color: #ffffff; /* Change text color to black */
-  width: 300px; /* Occupy full width */
-  display: flex; /* Make them stack vertically */
-
+  color: #ffffff;
+  width: 100%; /* Occupy full width */
+  display: flex;
+  /* Increase the font size and line height for text */
+  font-size: 18px;
+  line-height: 1.5;
 }
+
+/* Increase the size of the thumbnail image */
 #search-results-list li .thumbnail {
-  max-width: 50px; /* Set the maximum width for the thumbnail */
-  margin-right: 10px; /* Add some spacing between the image and the title */
+  max-width: 75px; /* Increase the maximum width for the thumbnail */
+  margin-right: 20px; /* Add more spacing between the image and the title */
 }
 
+/* Hover style */
 #search-results-list li:hover {
   background-color: #252424;
-  color: #c2c0c0; /* Change text color to black */
+  color: #c2c0c0;
 }
 
 /* Show the dropdown menu when results are available */
 #search-results-dropdown:enabled {
   display: block;
 }
-/* Add styling for the thumbnail image */
-.thumbnail {
-  max-width: 50px; /* Set the maximum width for the thumbnail */
-  margin-right: 10px; /* Add some spacing between the image and the title */
-}
 
 /* Adjust spacing between list items */
 #search-results-list li {
-  padding: 10px; /* Increase padding for better spacing */
+  padding: 15px; /* Increase padding for better spacing */
 }
+
+/* Adjust font size for the link */
 #search-results-list li a {
-  color: #ffffff; /* Set the text color to black */
+  color: #ffffff;
   text-decoration: none;
-  font-weight: bold;/* Remove underlines */
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .center-text {
   text-align: center;
