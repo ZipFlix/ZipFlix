@@ -47,7 +47,7 @@ function showVideoList(data) {
   // data.forEach(function (post) {
   //   console.log("Video:", post);
 
-  for (let i = 0; i < Math.min(data.length, 8); i++) {
+  for (let i = 0; i < Math.min(data.length, 9); i++) {
     const post = data[i];
 
     const imageContainer = document.createElement('div');

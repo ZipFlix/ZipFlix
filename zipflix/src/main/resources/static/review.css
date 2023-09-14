@@ -37,7 +37,7 @@ color: #ffffff;
     padding: 6px 10px;
     background-color: #730808;
     color: #fff;
-    font-size: 19px;
+    font-size: 23px;
     border: 1px solid #730808;
     border-radius: 5px;
 }
@@ -75,11 +75,11 @@ color: #ffffff;
   }
 
 .button-wrapper {
-    display: flex; 
+    display: flex;
     margin-top: 25px;
     justify-content: center;
 }
-  
+
 
   .review {
     margin-bottom: 10px;
@@ -88,12 +88,12 @@ color: #ffffff;
     background-color: #210101;
     color: #fff;
   }
-  
+
   /* Add spacing between review messages */
   .review p {
     margin: 0;
     text-align: center;
-    font-size: 24px;
+    font-size: 25px;
     font-style: italic;
   }
 
@@ -138,10 +138,71 @@ background-color: #730808;
 color: #fff;
 border: 1px solid #730808;
 border-radius: 5px;
-font-size: 19px;
+font-size: 23px;
 }
 
 #add-review-form button:hover {
 background-color: #cf2525;
+}
+
+#search-results-dropdown {
+  display: block;
+  position: absolute;
+  background-color: #000000;
+  border: 1px solid #000000;
+  max-height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  right: 0;
+  /* Increase the width and add padding to make it bigger */
+  width: 350px;
+  padding: 10px;
+}
+
+/* Increase the size of each search result item */
+#search-results-list li {
+  padding: 15px; /* Increase padding for better spacing */
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s;
+  color: #ffffff;
+  width: 100%; /* Occupy full width */
+  display: flex;
+  /* Increase the font size and line height for text */
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Increase the size of the thumbnail image */
+#search-results-list li .thumbnail {
+  max-width: 75px; /* Increase the maximum width for the thumbnail */
+  margin-right: 20px; /* Add more spacing between the image and the title */
+}
+
+/* Hover style */
+#search-results-list li:hover {
+  background-color: #252424;
+  color: #c2c0c0;
+}
+
+/* Show the dropdown menu when results are available */
+#search-results-dropdown:enabled {
+  display: block;
+}
+
+/* Adjust spacing between list items */
+#search-results-list li {
+  padding: 15px; /* Increase padding for better spacing */
+}
+
+/* Adjust font size for the link */
+#search-results-list li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
