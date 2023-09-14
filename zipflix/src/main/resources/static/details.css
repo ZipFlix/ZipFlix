@@ -81,7 +81,7 @@ h1 {
   text-align: center;
   padding: 20px;
   border-radius: 5px;
-  width: 550px;
+  width: 700px;
 }
 
 #add-review-form input,
@@ -239,19 +239,17 @@ textarea {
 }
 
 .video-container {
-  display: inline-block;
-  width: 12.5%;
+  width: 15.5%;
   box-sizing: border-box;
-  /* padding: 10px 0px 10px 0px; */
   text-align: center;
-  margin-right: 6px;
+  margin: 10px 5px 0px 0px;
 }
 
 .video-row {
   clear: both;
   display: flex;
   flex-direction: row;
-
+  justify-content: start;
 }
 
 .reviews-container {
@@ -415,6 +413,6 @@ textarea {
 }
 #console-output
 {
-  font-size: 16px;
+  font-size: 20px;
   display: none;/* Change to your desired font size */
 }
